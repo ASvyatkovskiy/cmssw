@@ -5,6 +5,8 @@
 #include "DetectorDescription/Core/interface/DDSolidShapes.h"
 #include "MagneticField/VolumeGeometry/interface/VolumeSide.h"
 #include "MagneticField/Engine/interface/MagneticField.h"
+#include "DetectorDescription/Core/interface/DDName.h"
+#include "DetectorDescription/Core/interface/DDMaterial.h"
 
 #include <vector>
 
@@ -24,7 +26,7 @@ public:
 	     DDSolidShape shape, const MagneticFieldProvider<float> * mfp,
 	     double sf=1.) :
     Base(pos,rot), MagneticField(), theShape(shape), theProvider(mfp), 
-    theProviderOwned(false), theScalingFactor(sf), isIronFlag(false) {}
+    theProviderOwned(false), theScalingFactor(sf), isIronFlag(false), materialType() {}  //the last uses simply the default constructor from DDMaterial
 
   virtual ~MagVolume();
 
@@ -49,7 +51,14 @@ public:
 
   /// Temporary hack to pass information on material. Will eventually be replaced!
   bool isIron() const {return isIronFlag;}
+  //MatProperties* getMaterialType() const {return materialType;}
+  DDMaterial getMaterialType() const {return materialType;}
   void setIsIron(bool iron) {isIronFlag = iron;}
+  void setMaterialType(std::string type) {
+       DDName matName(type); 
+       DDMaterial matTmp(matName); 
+       materialType = matTmp;
+  }
   void ownsFieldProvider(bool o) {theProviderOwned=o;}
 
 private:
@@ -60,6 +69,7 @@ private:
   double theScalingFactor;
   // Temporary hack to keep information on material. Will eventually be replaced!
   bool isIronFlag;
+  DDMaterial materialType;
 
 };
 
