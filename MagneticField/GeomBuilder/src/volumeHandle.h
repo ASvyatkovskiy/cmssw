@@ -16,13 +16,13 @@
 
 /* #include "DDD/DDCore/interface/DDSolid.h" */
 #include "DetectorDescription/Core/interface/DDSolid.h"
+#include "DetectorDescription/Core/interface/DDMaterial.h"
 #include "DataFormats/GeometrySurface/interface/Surface.h"
 //#include "ClassReuse/SurfaceGeometry/interface/BoundPlane.h"
 #include "MagneticField/VolumeGeometry/interface/VolumeSide.h"
 
 class DDExpandedView;
 class MagVolume6Faces;
-
 
 class MagGeoBuilderFromDDD::volumeHandle {
 public:
@@ -58,10 +58,8 @@ public:
   std::string name;
   /// Name of magnetic field table file
   std::string magFile;
-  /// volume number
-  unsigned short volumeno;
   /// copy number
-  unsigned short copyno;
+  int copyno;
 
   /// Just for debugging...
   static void printUniqueNames(handles::const_iterator begin,
@@ -108,6 +106,8 @@ public:
 
   /// Temporary hack to pass information on material. Will eventually be replaced!
   bool isIron() const{return isIronFlag;}
+  //FIXME SAV new
+  DDMaterial getMaterialType() const {return materialType;}
 
   /// The sector for which an interpolator for this class of volumes should be built
   int masterSector;
@@ -168,7 +168,7 @@ private:
 
   // Temporary hack to keep information on material. Will eventually be replaced!  
   bool isIronFlag;
-
+  DDMaterial materialType;
 };
 
 
