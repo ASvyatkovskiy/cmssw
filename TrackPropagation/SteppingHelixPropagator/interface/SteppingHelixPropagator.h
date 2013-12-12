@@ -40,8 +40,10 @@
 class MagneticField;
 class VolumeBasedMagneticField;
 class MagVolume;
+//FIXME
+class DDMaterial;
 
-class SteppingHelixPropagator GCC11_FINAL : public Propagator {
+class SteppingHelixPropagator : public Propagator {
  public:
   typedef CLHEP::Hep3Vector Vector;
   typedef CLHEP::Hep3Vector  Point;
@@ -261,6 +263,7 @@ class SteppingHelixPropagator GCC11_FINAL : public Propagator {
 
   //! check if it's a yoke/iron based on this MagVol internals  
   bool isYokeVolume(const MagVolume* vol) const;
+  const DDMaterial* getMaterialVolType(const MagVolume* vol) const;
 
 
  private:
