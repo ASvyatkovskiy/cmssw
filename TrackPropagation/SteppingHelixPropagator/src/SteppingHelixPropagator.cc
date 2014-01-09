@@ -21,6 +21,9 @@
 #include "MagneticField/Engine/interface/MagneticField.h"
 #include "MagneticField/VolumeBasedEngine/interface/VolumeBasedMagneticField.h"
 #include "MagneticField/VolumeGeometry/interface/MagVolume.h"
+#include "MagneticField/VolumeGeometry/interface/AlexeyVolume.h"
+#include "MagneticField/VolumeBasedEngine/interface/AlexeyGeometry.h"
+#include "MagneticField/VolumeBasedEngine/interface/VolumeBasedAlexeyField.h"
 #include "MagneticField/Interpolation/interface/MFGrid.h"
 
 #include "DataFormats/GeometrySurface/interface/Cylinder.h"
@@ -36,6 +39,14 @@
 
 #include "FWCore/MessageLogger/interface/MessageLogger.h"
 
+#include "DetectorDescription/Parser/interface/DDLParser.h"
+#include "DetectorDescription/Parser/interface/FIPConfiguration.h"
+#include "DetectorDescription/Core/interface/DDCompactView.h"
+#include "MagneticField/GeomBuilder/src/AlexeyGeoBuilderFromDDD.h"
+
+#include "DetectorDescription/Core/src/DDCheck.h"
+#include "FWCore/Framework/interface/ESTransientHandle.h"
+
 #include <sstream>
 #include <typeinfo>
 
@@ -45,7 +56,7 @@ SteppingHelixPropagator::SteppingHelixPropagator() :
   field_ = 0;
 }
 
-SteppingHelixPropagator::SteppingHelixPropagator(const MagneticField* field, 
+SteppingHelixPropagator::SteppingHelixPropagator(const MagneticField* field,
 						 PropagationDirection dir):
   Propagator(dir),
   unit55_(AlgebraicMatrixID())
@@ -80,6 +91,9 @@ SteppingHelixPropagator::SteppingHelixPropagator(const MagneticField* field,
 
   ecShiftPos_ = 0;
   ecShiftNeg_ = 0;
+ 
+ //FIXME 
+ vbAlexeyField_ = new VolumeBasedAlexeyField(abuilder.barrelLayers(), abuilder.endcapSectors(), abuilder.barrelVolumes(), abuilder.endcapVolumes(), abuilder.maxR(), abuilder.maxZ());
 
 }
 
@@ -692,8 +706,10 @@ void SteppingHelixPropagator::loadState(SteppingHelixPropagator::StateInfo& svCu
     if (vbField_ ){
       if (vbField_->isZSymmetric()){
 	svCurrent.magVol = vbField_->findVolume(gPointNegZ);
+        svCurrent.alexeyVol = AlexeyGeometry::findVolume(gPointNegZ);
       } else {
 	svCurrent.magVol = vbField_->findVolume(gPointNorZ);
+        svCurrent.alexeyVol = AlexeyGeometry::findVolume(gPointNorZ);
       }
       if (useIsYokeFlag_){
 	double curRad = svCurrent.r3.perp();
@@ -706,6 +722,7 @@ void SteppingHelixPropagator::loadState(SteppingHelixPropagator::StateInfo& svCu
     } else {
       edm::LogWarning(metname)<<std::setprecision(17)<<std::setw(20)<<std::scientific<<"Failed to cast into VolumeBasedMagneticField: fall back to the default behavior"<<std::endl;
       svCurrent.magVol = 0;
+      svCurrent.alexeyVol = 0;
     }
     if (debug_){
       LogTrace(metname)<<std::setprecision(17)<<std::setw(20)<<std::scientific<<"Got volume at "<<svCurrent.magVol<<std::endl;
@@ -801,8 +818,10 @@ void SteppingHelixPropagator::getNextState(const SteppingHelixPropagator::StateI
     if (vbField_ != 0){
        if (vbField_->isZSymmetric()){
 	 svNext.magVol = vbField_->findVolume(gPointNegZ);
+         //svNext.alexeyVol = AlexeyGeometry::findVolume(gPointNegZ);
        } else {
 	 svNext.magVol = vbField_->findVolume(gPointNorZ);
+         //svNext.alexeyVol = AlexeyGeometry::findVolume(gPointNorZ);
        }
       if (useIsYokeFlag_){
 	double curRad = svNext.r3.perp();
@@ -815,6 +834,7 @@ void SteppingHelixPropagator::getNextState(const SteppingHelixPropagator::StateI
     } else {
       LogTrace(metname)<<std::setprecision(17)<<std::setw(20)<<std::scientific<<"Failed to cast into VolumeBasedMagneticField"<<std::endl;
       svNext.magVol = 0;
+      svNext.alexeyVol = 0;
     }
     if (debug_){
       LogTrace(metname)<<std::setprecision(17)<<std::setw(20)<<std::scientific<<"Got volume at "<<svNext.magVol<<std::endl;
@@ -1332,6 +1352,12 @@ double SteppingHelixPropagator::getDeDx(const SteppingHelixPropagator::StateInfo
   double lR = sv.r3.perp();
   double lZ = fabs(sv.r3.z());
 
+
+  //FIXME SAV
+  //insert new navigation here
+  //std::cout <<  "This material type " << getMaterialVolType(sv.alexeyVol).name().name() << std::endl;
+
+  //Current old implementation
   //assume "Iron" .. seems to be quite the same for brass/iron/PbW04
   //good for Fe within 3% for 0.2 GeV to 10PeV
 
@@ -2345,6 +2371,17 @@ bool SteppingHelixPropagator::isYokeVolume(const MagVolume* vol) const {
   } else {
     if (debug_) LogTrace(metname)<<std::setprecision(17)<<std::setw(20)<<std::scientific<<"Volume is not magnetic, located at "<<vol->position()<<std::endl;
   }
+
+  return result;
+}
+
+
+const DDMaterial* SteppingHelixPropagator::getMaterialVolType(const AlexeyVolume* vol) const {
+
+  if (vol == 0) return 0;
+  //std::cout << "Material type " << (vol->getMaterialType()).name().name() << std::endl; 
+  const DDMaterial* result = new DDMaterial(vol->getMaterialType()); 
+  //if (debug_) LogTrace(metname)<<std::setprecision(17)<<std::setw(20)<<std::scientific<<"Volume is not magnetic, located at "<<vol->position()<<std::endl;
 
   return result;
 }

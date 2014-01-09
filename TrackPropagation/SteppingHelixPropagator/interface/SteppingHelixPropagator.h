@@ -34,14 +34,16 @@
 #include "CLHEP/Matrix/Matrix.h"
 #include "CLHEP/Vector/ThreeVector.h"
 
-
 #include "TrackPropagation/SteppingHelixPropagator/interface/SteppingHelixStateInfo.h"
 
 class MagneticField;
 class VolumeBasedMagneticField;
 class MagVolume;
+class VolumeBasedAlexeyField;
+class AlexeyVolume;
+class DDMaterial;
 
-class SteppingHelixPropagator GCC11_FINAL : public Propagator {
+class SteppingHelixPropagator : public Propagator {
  public:
   typedef CLHEP::Hep3Vector Vector;
   typedef CLHEP::Hep3Vector  Point;
@@ -261,6 +263,7 @@ class SteppingHelixPropagator GCC11_FINAL : public Propagator {
 
   //! check if it's a yoke/iron based on this MagVol internals  
   bool isYokeVolume(const MagVolume* vol) const;
+  const DDMaterial* getMaterialVolType(const AlexeyVolume* vol) const;
 
 
  private:
@@ -278,6 +281,7 @@ class SteppingHelixPropagator GCC11_FINAL : public Propagator {
 
   const MagneticField* field_;
   const VolumeBasedMagneticField* vbField_;
+  const VolumeBasedAlexeyField* vbAlexeyField_;
   const AlgebraicSymMatrix55 unit55_;
   bool debug_;
   bool noMaterialMode_;

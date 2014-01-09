@@ -1,0 +1,66 @@
+// #include "Utilities/Configuration/interface/Architecture.h"
+
+/*
+ *  See header file for a description of this class.
+ *
+ *  $Date: 2005/09/26 14:47:13 $
+ *  $Revision: 1.2 $
+ *  \author N. Amapane - INFN Torino
+ */
+
+#include "MagneticField/GeomBuilder/src/eAlexeyLayer.h"
+#include "MagneticField/VolumeGeometry/interface/AlexeyVolume6Faces.h"
+#include "MagneticField/Layers/interface/AlexeyELayer.h"
+
+#include "Utilities/General/interface/precomputed_value_sort.h"
+
+using namespace SurfaceOrientation;
+using namespace std;
+
+//The ctor is in charge of finding sectors inside the layer.
+AlexeyGeoBuilderFromDDD::eAlexeyLayer::eAlexeyLayer(handles::const_iterator begin,
+					handles::const_iterator end) :
+  theVolumes(begin,end),
+  mlayer(0) 
+{
+  //  bool debug=AlexeyGeoBuilderFromDDD::debug;
+
+  // Sort in R  
+  precomputed_value_sort(theVolumes.begin(), theVolumes.end(), ExtractR());
+
+//   if (debug) {
+//     cout << " elements: " << theVolumes.size() << " unique volumes: ";
+//     volumeHandle::printUniqueNames(theVolumes.begin(), theVolumes.end());
+//   }
+}
+
+AlexeyGeoBuilderFromDDD::eAlexeyLayer::~eAlexeyLayer(){}
+
+// double AlexeyGeoBuilderFromDDD::eAlexeyLayer::minR() const {
+//   // ASSUMPTION: a layer is only 1 volume thick (by construction). 
+//   return theVolumes.front()->minR();
+// }
+
+// double AlexeyGeoBuilderFromDDD::eAlexeyLayer::maxR() const {
+//   // ASSUMPTION: a layer is only 1 volume thick (by construction). 
+//   return theVolumes.front()->maxR();
+// }
+
+AlexeyELayer * AlexeyGeoBuilderFromDDD::eAlexeyLayer::buildAlexeyELayer() const {
+  if (mlayer==0) {
+    //FIXME not guaranteed that all volumes in layer have the same zmin
+    // and zmax!
+    double zmin = 1e19;
+    double zmax = -1e19;
+    vector<AlexeyVolume6Faces*> mVols;
+    for (handles::const_iterator vol = theVolumes.begin();
+	 vol!=theVolumes.end(); ++vol) {
+      mVols.push_back((*vol)->alexeyVolume);
+      zmin = min(zmin, (*vol)->minZ());
+      zmax = max(zmax, (*vol)->maxZ());
+    }
+    mlayer = new AlexeyELayer(mVols, zmin, zmax);
+  }
+  return mlayer;
+}
+

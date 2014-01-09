@@ -6,15 +6,15 @@
 /** \class SteppingHelixStateInfo
  *  Holder of SteppingHelixState information
  *
- *  $Date: 2009/09/08 19:20:24 $
- *  $Revision: 1.15.2.2 $
+ *  $Date: 2009/09/08 20:44:31 $
+ *  $Revision: 1.16 $
  *  \author Vyacheslav Krutelyov (slava77)
  */
 
 //
 // Original Author:  Vyacheslav Krutelyov
 //         Created:  Wed Jan  3 16:01:24 CST 2007
-// $Id: SteppingHelixStateInfo.h,v 1.15.2.2 2009/09/08 19:20:24 slava77 Exp $
+// $Id: SteppingHelixStateInfo.h,v 1.16 2009/09/08 20:44:31 slava77 Exp $
 //
 //
 
@@ -28,9 +28,11 @@
 
 class MagneticField;
 class MagVolume;
+class AlexeyVolume;
 class Surface;
 class SteppingHelixPropagator;
 class FreeTrajectoryState;
+class DDMaterial;
 
 class SteppingHelixStateInfo {
   friend class SteppingHelixPropagator;
@@ -53,7 +55,7 @@ class SteppingHelixStateInfo {
   static const std::string ResultName[MAX_RESULT];
 
   SteppingHelixStateInfo(): 
-    path_(0), radPath_(0), dir(0), magVol(0), field(0), dEdx(0), dEdXPrime(0), radX0(1e12),
+    path_(0), radPath_(0), dir(0), magVol(0), alexeyVol(0), field(0), dEdx(0), dEdXPrime(0), radX0(1e12),
     isComplete(0), isValid_(0), hasErrorPropagated_(0), status_(UNDEFINED) {}
   SteppingHelixStateInfo(const FreeTrajectoryState& fts);
 
@@ -100,7 +102,10 @@ class SteppingHelixStateInfo {
   Vector bf;
   Vector bfGradLoc;
   const MagVolume* magVol;
+  const AlexeyVolume* alexeyVol;
+
   bool isYokeVol;//will be set (most likely) only for the barrel volumes (850>r>3.8, z<667)
+  //const DDMaterial* matVolType;
   const MagneticField* field;  
   
   VolumeBounds rzLims;
