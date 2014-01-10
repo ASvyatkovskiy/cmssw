@@ -91,10 +91,6 @@ SteppingHelixPropagator::SteppingHelixPropagator(const MagneticField* field,
 
   ecShiftPos_ = 0;
   ecShiftNeg_ = 0;
- 
- //FIXME 
- vbAlexeyField_ = new VolumeBasedAlexeyField(abuilder.barrelLayers(), abuilder.endcapSectors(), abuilder.barrelVolumes(), abuilder.endcapVolumes(), abuilder.maxR(), abuilder.maxZ());
-
 }
 
 TrajectoryStateOnSurface 
@@ -706,10 +702,10 @@ void SteppingHelixPropagator::loadState(SteppingHelixPropagator::StateInfo& svCu
     if (vbField_ ){
       if (vbField_->isZSymmetric()){
 	svCurrent.magVol = vbField_->findVolume(gPointNegZ);
-        svCurrent.alexeyVol = AlexeyGeometry::findVolume(gPointNegZ);
+        svCurrent.alexeyVol = vAlexeybField_->findVolume(gPointNegZ);
       } else {
 	svCurrent.magVol = vbField_->findVolume(gPointNorZ);
-        svCurrent.alexeyVol = AlexeyGeometry::findVolume(gPointNorZ);
+        svCurrent.alexeyVol = vAlexeybField_->findVolume(gPointNorZ);
       }
       if (useIsYokeFlag_){
 	double curRad = svCurrent.r3.perp();
