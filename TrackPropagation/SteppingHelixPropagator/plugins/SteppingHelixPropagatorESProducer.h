@@ -7,6 +7,8 @@
 #include "TrackPropagation/SteppingHelixPropagator/interface/SteppingHelixPropagator.h"
 #include <boost/shared_ptr.hpp>
 
+class VolumeBasedMatNav;
+
 class  SteppingHelixPropagatorESProducer: public edm::ESProducer{
  public:
   SteppingHelixPropagatorESProducer(const edm::ParameterSet & p);
@@ -15,6 +17,9 @@ class  SteppingHelixPropagatorESProducer: public edm::ESProducer{
  private:
   boost::shared_ptr<Propagator> _propagator;
   edm::ParameterSet pset_;
+  VolumeBasedMatNav* vbAlField_;
+  //std::unique_ptr<VolumeBasedMatNav> vbAlField_;
+
 };
 
 

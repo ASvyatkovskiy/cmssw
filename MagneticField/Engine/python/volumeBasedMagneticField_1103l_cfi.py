@@ -44,4 +44,22 @@ VolumeBasedMagneticFieldESProducer = cms.ESProducer("VolumeBasedMagneticFieldESP
     )
 )
 
-
+VolumeBasedAlexeyESProducer = cms.ESProducer("VolumeBasedAlexeyESProducer",
+    useParametrizedTrackerField = cms.bool(True),
+    label = cms.untracked.string(''),
+    paramLabel = cms.string('parametrizedField'),
+    version = cms.string('grid_1103l_071212_3t'),
+    geometryVersion = cms.int32(71212),
+    debugBuilder = cms.untracked.bool(False),
+    cacheLastVolume = cms.untracked.bool(True),
+    scalingVolumes = cms.vint32(),
+    scalingFactors = cms.vdouble(),
+    gridFiles = cms.VPSet(
+        cms.PSet( # Default tables, replicate sector 1
+            volumes   = cms.string('1-312'),
+            sectors   = cms.string('0') ,
+            master    = cms.int32(1),
+            path      = cms.string('grid.[v].bin'),
+        ),
+    )
+)

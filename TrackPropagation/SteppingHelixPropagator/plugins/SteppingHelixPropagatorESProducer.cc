@@ -5,15 +5,22 @@
 
 #include "FWCore/Framework/interface/EventSetup.h"
 #include "FWCore/Framework/interface/ESHandle.h"
+#include "FWCore/Framework/interface/ESTransientHandle.h"
 #include "FWCore/Framework/interface/ModuleFactory.h"
 #include "FWCore/Framework/interface/ESProducer.h"
 
 #include "FWCore/MessageLogger/interface/MessageLogger.h"
 
+#include "MagneticField/VolumeGeometry/interface/MatVolume.h"
+#include "MagneticField/VolumeBasedEngine/interface/MatGeometry.h"
+#include "MagneticField/VolumeBasedEngine/interface/VolumeBasedMatNav.h"
+#include "MagneticField/GeomBuilder/src/MatGeoBuilderFromDDD.h"
+
 #include <string>
 #include <memory>
 
 using namespace edm;
+using namespace std;
 
 SteppingHelixPropagatorESProducer::SteppingHelixPropagatorESProducer(const edm::ParameterSet & p) 
 {
@@ -58,6 +65,23 @@ SteppingHelixPropagatorESProducer::produce(const TrackingComponentsRecord & iRec
       useInTeslaFromMagField = true;
     }
   }
+
+  //FIXME
+  edm::ESTransientHandle<DDCompactView> cpv;
+  iRecord.getRecord<IdealMagneticFieldRecord>().get("magfield",cpv );
+  MatGeoBuilderFromDDD builder("grid_1103l_090322_3_8t",
+                               90322,
+                               false);
+  builder.build(*cpv);
+  cout << "in MatGeoBuilderFromDDD before the crash" << endl;
+  edm::ESHandle<MagneticField> paramField;
+  ////if (pset_.getParameter<bool>("useParametrizedTrackerField")) {;
+  ////  iRecord.getRecord<IdealMagneticFieldRecord>().get(pset_.getParameter<string>("paramLabel"),paramField);
+  ////}
+  vbAlField_ = new VolumeBasedMatNav(pset_,builder.barrelLayers(), builder.endcapSectors(), builder.barrelVolumes(), builder.endcapVolumes(), builder.maxR(), builder.maxZ());
+  cout << "in MatGeoBuilderFromDDD never seen this line" << endl;
+  shProp->vbMatNav_ = vbAlField_;
+  //FIXME
 
   if (setVBFPointer){
     std::string vbfName = pset_.getParameter<std::string>("VBFName");

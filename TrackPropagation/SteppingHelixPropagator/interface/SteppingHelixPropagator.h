@@ -21,8 +21,6 @@
 //
 //
 
-
-
 #include "DataFormats/GeometryVector/interface/GlobalVector.h"
 #include "DataFormats/GeometryVector/interface/GlobalPoint.h"
 #include "TrackingTools/GeomPropagators/interface/Propagator.h"
@@ -34,12 +32,16 @@
 #include "CLHEP/Matrix/Matrix.h"
 #include "CLHEP/Vector/ThreeVector.h"
 
-
 #include "TrackPropagation/SteppingHelixPropagator/interface/SteppingHelixStateInfo.h"
+#include "FWCore/ParameterSet/interface/ParameterSet.h"
 
 class MagneticField;
 class VolumeBasedMagneticField;
 class MagVolume;
+class VolumeBasedMatNav;
+class MatVolume;
+class DDMaterial;
+
 
 class SteppingHelixPropagator GCC11_FINAL : public Propagator {
  public:
@@ -84,6 +86,7 @@ class SteppingHelixPropagator GCC11_FINAL : public Propagator {
   //! Constructors
   SteppingHelixPropagator();
   SteppingHelixPropagator(const MagneticField* field, PropagationDirection dir = alongMomentum);
+  SteppingHelixPropagator(const edm::ParameterSet& iConfig, const MagneticField* field, PropagationDirection dir = alongMomentum);
 
   virtual SteppingHelixPropagator* clone() const {return new SteppingHelixPropagator(*this);}
 
@@ -261,7 +264,11 @@ class SteppingHelixPropagator GCC11_FINAL : public Propagator {
 
   //! check if it's a yoke/iron based on this MagVol internals  
   bool isYokeVolume(const MagVolume* vol) const;
+  const DDMaterial* getMaterialVolType(const MatVolume* vol) const;
 
+ public:
+  const VolumeBasedMatNav* vbMatNav_;
+  //std::unique_ptr<VolumeBasedMatNav> vbMatNav_;
 
  private:
   typedef std::pair<TrajectoryStateOnSurface, double> TsosPP;

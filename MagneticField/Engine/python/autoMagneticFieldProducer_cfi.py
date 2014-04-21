@@ -68,6 +68,28 @@ VBF0 = cms.ESProducer("VolumeBasedMagneticFieldESProducer",
     )
 )
 
+#FIXME
+VBF0_Alexey = cms.ESProducer("VolumeBasedAlexeyESProducer",
+    label = cms.untracked.string('0t'),
+    useParametrizedTrackerField = cms.bool(True),
+    paramLabel = cms.string('slave_0'),
+    version = cms.string('grid_1103l_071212_2t'),
+    geometryVersion = cms.int32(71212),
+    debugBuilder = cms.untracked.bool(False),
+    cacheLastVolume = cms.untracked.bool(True),
+    scalingVolumes = cms.vint32(),
+    scalingFactors = cms.vdouble(),
+    gridFiles = cms.VPSet(
+        cms.PSet( # Default tables, replicate sector 1
+            volumes   = cms.string('1-312'),
+            sectors   = cms.string('0') ,
+            master    = cms.int32(1),
+            path      = cms.string('grid.[v].bin'),
+        ),
+    )
+)
+
+
 VBF20 = VBF0.clone()
 VBF20.version = 'grid_1103l_071212_2t'
 VBF20.paramLabel = 'slave_20'
@@ -82,6 +104,22 @@ VBF35 = VBF0.clone()
 VBF35.version = 'grid_1103l_071212_3_5t'
 VBF35.paramLabel = 'slave_35'
 VBF35.label = '071212_3_5t'
+
+#FIXME
+VBF20_Alexey = VBF0_Alexey.clone()
+VBF20_Alexey.version = 'grid_1103l_071212_2t'
+VBF20_Alexey.paramLabel = 'slave_20'
+VBF20_Alexey.label = '071212_2t'
+
+VBF30_Alexey = VBF0_Alexey.clone()
+VBF30_Alexey.version = 'grid_1103l_071212_3t'
+VBF30_Alexey.paramLabel = 'slave_30'
+VBF30_Alexey.label = '071212_3t'
+
+VBF35_Alexey = VBF0_Alexey.clone()
+VBF35_Alexey.version = 'grid_1103l_071212_3_5t'
+VBF35_Alexey.paramLabel = 'slave_35'
+VBF35_Alexey.label = '071212_3_5t'
 
 #3.8T map: apply scaling factors; use sector-specific maps
 from MagneticField.Engine.ScalingFactors_090322_2pi_090520_cfi import *
@@ -99,35 +137,30 @@ VBF38.gridFiles = cms.VPSet(
             master    = cms.int32(1),
             path      = cms.string('grid.[v].bin'),
         ),
-
         cms.PSet( # Specific volumes in Barrel, sector 3
             volumes   = cms.string('176-186,231-241,286-296'),
             sectors   = cms.string('3') ,
             master    = cms.int32(3),
             path      = cms.string('S3/grid.[v].bin'),
         ),
-
         cms.PSet( # Specific volumes in Barrel, sector 4
             volumes   = cms.string('176-186,231-241,286-296'),
             sectors   = cms.string('4') ,
             master    = cms.int32(4),
             path      = cms.string('S4/grid.[v].bin'),
         ),
-
         cms.PSet(  # Specific volumes in Barrel and endcaps, sector 9
             volumes   = cms.string('14,15,20,21,24-27,32,33,40,41,48,49,56,57,62,63,70,71,286-296'),
             sectors   = cms.string('9') ,
             master    = cms.int32(9),
             path      = cms.string('S9/grid.[v].bin'),
         ),
-
         cms.PSet(  # Specific volumes in Barrel and endcaps, sector 10
             volumes   = cms.string('14,15,20,21,24-27,32,33,40,41,48,49,56,57,62,63,70,71,286-296'),
             sectors   = cms.string('10') ,
             master    = cms.int32(10),
             path      = cms.string('S10/grid.[v].bin'),
         ),
-                                                        
         cms.PSet( # Specific volumes in Barrel and endcaps, sector 11
             volumes   = cms.string('14,15,20,21,24-27,32,33,40,41,48,49,56,57,62,63,70,71,286-296'),
             sectors   = cms.string('11') ,
@@ -137,12 +170,65 @@ VBF38.gridFiles = cms.VPSet(
     )
 
 
+#FIXME
+#3.8T map: apply scaling factors; use sector-specific maps
+from MagneticField.Engine.ScalingFactors_090322_2pi_090520_cfi import *
+VBF38_Alexey = VBF0_Alexey.clone()
+VBF38_Alexey.version = 'grid_1103l_090322_3_8t'
+VBF38_Alexey.geometryVersion = 90322
+VBF38_Alexey.paramLabel = 'slave_38'
+VBF38_Alexey.label = '090322_3_8t'
+VBF38_Alexey.scalingVolumes = fieldScaling.scalingVolumes
+VBF38_Alexey.scalingFactors = fieldScaling.scalingFactors
+VBF38_Alexey.gridFiles = cms.VPSet(
+        cms.PSet( # Default tables, replicate sector 1
+            volumes   = cms.string('1-312'),
+            sectors   = cms.string('0') ,
+            master    = cms.int32(1),
+            path      = cms.string('grid.[v].bin'),
+        ),
+        cms.PSet( # Specific volumes in Barrel, sector 3
+            volumes   = cms.string('176-186,231-241,286-296'),
+            sectors   = cms.string('3') ,
+            master    = cms.int32(3),
+            path      = cms.string('S3/grid.[v].bin'),
+        ),
+        cms.PSet( # Specific volumes in Barrel, sector 4
+            volumes   = cms.string('176-186,231-241,286-296'),
+            sectors   = cms.string('4') ,
+            master    = cms.int32(4),
+            path      = cms.string('S4/grid.[v].bin'),
+        ),
+        cms.PSet(  # Specific volumes in Barrel and endcaps, sector 9
+            volumes   = cms.string('14,15,20,21,24-27,32,33,40,41,48,49,56,57,62,63,70,71,286-296'),
+            sectors   = cms.string('9') ,
+            master    = cms.int32(9),
+            path      = cms.string('S9/grid.[v].bin'),
+        ),
+        cms.PSet(  # Specific volumes in Barrel and endcaps, sector 10
+            volumes   = cms.string('14,15,20,21,24-27,32,33,40,41,48,49,56,57,62,63,70,71,286-296'),
+            sectors   = cms.string('10') ,
+            master    = cms.int32(10),
+            path      = cms.string('S10/grid.[v].bin'),
+        ),
+        cms.PSet( # Specific volumes in Barrel and endcaps, sector 11
+            volumes   = cms.string('14,15,20,21,24-27,32,33,40,41,48,49,56,57,62,63,70,71,286-296'),
+            sectors   = cms.string('11') ,
+            master    = cms.int32(11),
+            path      = cms.string('S11/grid.[v].bin'),
+        ),
+    )
 
 VBF40 = VBF0.clone()
 VBF40.version = 'grid_1103l_071212_4t'
 VBF40.paramLabel = 'slave_40'
 VBF40.label = '071212_4t'
 
+#FIXME
+VBF40_Alexey = VBF0_Alexey.clone()
+VBF40_Alexey.version = 'grid_1103l_071212_4t'
+VBF40_Alexey.paramLabel = 'slave_40'
+VBF40_Alexey.label = '071212_4t'
 
 AutoMagneticFieldESProducer = cms.ESProducer("AutoMagneticFieldESProducer",
    # if positive, set B value (in kGauss), overriding the current reading from DB

@@ -24,6 +24,7 @@ class Surface;
 class MagBLayer;
 class MagESector;
 class MagVolume6Faces;
+class MatGeoBuilderFromDDD;
 namespace magneticfield {
   class VolumeBasedMagneticFieldESProducer;
   class AutoMagneticFieldESProducer;
@@ -70,7 +71,7 @@ private:
   friend class MagGeometry;
   friend class magneticfield::VolumeBasedMagneticFieldESProducer;
   friend class magneticfield::AutoMagneticFieldESProducer;
-
+  friend class MatGeoBuilderFromDDD; 
 
   std::vector<MagVolume6Faces*> barrelVolumes() const;  
   std::vector<MagVolume6Faces*> endcapVolumes() const;

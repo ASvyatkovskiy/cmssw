@@ -30,6 +30,7 @@ using namespace magneticfield;
 
 VolumeBasedMagneticFieldESProducer::VolumeBasedMagneticFieldESProducer(const edm::ParameterSet& iConfig) : pset(iConfig)
 {
+  cout << "Calling VolumeBasedMagneticFieldESProducer constructor" << endl; 
   setWhatProduced(this, pset.getUntrackedParameter<std::string>("label",""));
 }
 
@@ -37,15 +38,17 @@ VolumeBasedMagneticFieldESProducer::VolumeBasedMagneticFieldESProducer(const edm
 std::auto_ptr<MagneticField> VolumeBasedMagneticFieldESProducer::produce(const IdealMagneticFieldRecord & iRecord)
 {
   bool debug = pset.getUntrackedParameter<bool>("debugBuilder", false);
-  if (debug) {
+  //if (debug) {
     cout << "VolumeBasedMagneticFieldESProducer::produce() " << pset.getParameter<std::string>("version") << endl;
-  }
+  //}
   
   edm::ESTransientHandle<DDCompactView> cpv;
   iRecord.get("magfield",cpv );
   MagGeoBuilderFromDDD builder(pset.getParameter<std::string>("version"),
 			       pset.getParameter<int>("geometryVersion"),
 			       debug);
+
+  cout << "MagGeoBuilderFromDDD " << pset.getParameter<std::string>("version") << endl;
 
   // Get scaling factors
   vector<int> keys = pset.getParameter<vector<int> >("scalingVolumes");

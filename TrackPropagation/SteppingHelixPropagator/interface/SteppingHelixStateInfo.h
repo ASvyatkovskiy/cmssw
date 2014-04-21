@@ -28,9 +28,11 @@
 
 class MagneticField;
 class MagVolume;
+class MatVolume;
 class Surface;
 class SteppingHelixPropagator;
 class FreeTrajectoryState;
+class DDMaterial;
 
 class SteppingHelixStateInfo {
   friend class SteppingHelixPropagator;
@@ -53,7 +55,7 @@ class SteppingHelixStateInfo {
   static const std::string ResultName[MAX_RESULT];
 
   SteppingHelixStateInfo(): 
-    path_(0), radPath_(0), dir(0), magVol(0), field(0), dEdx(0), dEdXPrime(0), radX0(1e12),
+    path_(0), radPath_(0), dir(0), magVol(0), matVol(0), field(0), dEdx(0), dEdXPrime(0), radX0(1e12),
     isComplete(0), isValid_(0), hasErrorPropagated_(0), status_(UNDEFINED) {}
   SteppingHelixStateInfo(const FreeTrajectoryState& fts);
 
@@ -100,6 +102,7 @@ class SteppingHelixStateInfo {
   Vector bf;
   Vector bfGradLoc;
   const MagVolume* magVol;
+  const MatVolume* matVol;
   bool isYokeVol;//will be set (most likely) only for the barrel volumes (850>r>3.8, z<667)
   const MagneticField* field;  
   
