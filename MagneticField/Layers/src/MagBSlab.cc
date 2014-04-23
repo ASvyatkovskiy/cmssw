@@ -35,8 +35,9 @@ MagVolume* MagBSlab::findVolume(const GlobalPoint & gp, double tolerance) const 
 	ivol != theVolumes.end(); ++ivol) {
     // FIXME : use a binfinder
     // TOFIX
-    if (verbose::debugOut) cout << "        Trying volume "
-			       << (static_cast<MagVolume6Faces*>(*ivol))->volumeNo << endl;
+    //if (verbose::debugOut) 
+    //cout << "        Trying volume "
+//			       << (static_cast<MagVolume6Faces*>(*ivol))->volumeNo << endl;
     if ( (*ivol)->inside(gp,tolerance) ) return (*ivol);
   }
 

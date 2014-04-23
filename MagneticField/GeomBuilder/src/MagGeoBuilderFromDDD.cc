@@ -65,6 +65,7 @@ MagGeoBuilderFromDDD::MagGeoBuilderFromDDD(string tableSet_,int geometryVersion_
   geometryVersion(geometryVersion_),
   theGridFiles(0)
 {  
+  cout << "XYZ " << tableSet_ << " " << geometryVersion_ << " " << debug_ << endl; 
   debug = debug_;
   if (debug) cout << "Constructing a MagGeoBuilderFromDDD" <<endl;
 }
@@ -275,7 +276,7 @@ void MagGeoBuilderFromDDD::build(const DDCompactView & cpva)
   //----------------------------------------------------------------------
   // Print summary information
 
-  if (debug) {
+  //if (debug) {
     cout << "-----------------------" << endl;
     cout << "SUMMARY: Barrel " << endl;
     summary(bVolumes);
@@ -283,7 +284,7 @@ void MagGeoBuilderFromDDD::build(const DDCompactView & cpva)
     cout << endl << "SUMMARY: Endcaps " << endl;
     summary(eVolumes);
     cout << "-----------------------" << endl;
-  }
+  //}
 
 
   //----------------------------------------------------------------------

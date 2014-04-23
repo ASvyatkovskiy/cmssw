@@ -65,12 +65,13 @@ MatVolume6Faces* MatBLayer::findVolume(const GlobalPoint & gp, double tolerance)
   //In case the layer is composed of a single volume...
   if (theSingleVolume) {
     // TOFIX
-//     if (verbose.debugOut) cout << "   Trying the unique volume " << endl;
+//     if (verbose.debugOut) 
+    cout << "   Trying the unique volume " << endl;
     if (theSingleVolume->inside(gp, tolerance)) {
       result = theSingleVolume;
     // TOFIX
-//       if (verbose.debugOut) cout << "***In unique bsector"
-// 		  << (result==0? " failed " : " OK ") <<endl;
+//       if (verbose.debugOut) 
+    cout << "***In unique bsector" << (result==0? " failed " : " OK ") <<endl;
     }
     return result;
   }
@@ -82,22 +83,27 @@ MatVolume6Faces* MatBLayer::findVolume(const GlobalPoint & gp, double tolerance)
   // FIXME assume sectors are sorted in phi!
   int bin= theBinFinder->binIndex(phi);
     // TOFIX
-  if (verbose::debugOut) cout << "   Trying sector at phi " << theSectors[bin]->minPhi()
+  //if (verbose::debugOut) 
+  cout << "   Trying sector at phi " << theSectors[bin]->minPhi()
 			      << " " << phi << endl ;
   result = theSectors[bin]->findVolume(gp, tolerance);
     // TOFIX
-  if (verbose::debugOut) cout << "***In guessed bsector"
+  //if (verbose::debugOut) 
+  cout << "***In guessed bsector"
 			     << (result==0? " failed " : " OK ") <<endl;
 
-  if (result==0) { // If fails, can be in previous bin.
+  if (result==0) { 
+    cout << "If fails, can be in previous bin." << endl;
     // TOFIX
-    if (verbose::debugOut) cout << "   Trying sector at phi "
+    //if (verbose::debugOut) 
+    cout << "   Trying sector at phi "
 			       << theSectors[theBinFinder->binIndex(bin-1)]->minPhi()
 			       << " " << phi << endl ;
     
-    result = theSectors[theBinFinder->binIndex(bin-1)]->findVolume(gp, tolerance);
+    result = theSectors[theBinFinder->binIndex(bin-1)]->findVolume(gp, 10*tolerance);
     // TOFIX
-    if (verbose::debugOut) cout << "***In previous bsector"
+    //if (verbose::debugOut) 
+    cout << "***In previous bsector"
 			       << (result==0? " failed " : " OK ") <<endl;
 
   }

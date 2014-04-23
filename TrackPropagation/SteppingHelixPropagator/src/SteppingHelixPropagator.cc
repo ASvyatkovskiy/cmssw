@@ -67,8 +67,6 @@ SteppingHelixPropagator::SteppingHelixPropagator(const MagneticField* field,
   unit55_(AlgebraicMatrixID())
 {
 
-  cout << "Hello from SHP" << endl;
-
   field_ = field;
   vbField_ = dynamic_cast<const VolumeBasedMagneticField*>(field_);
 
@@ -711,16 +709,19 @@ void SteppingHelixPropagator::loadState(SteppingHelixPropagator::StateInfo& svCu
     if (vbField_ ){
       if (vbField_->isZSymmetric()){
 	svCurrent.magVol = vbField_->findVolume(gPointNegZ);
-        cout << "Validate the MatVolume" << endl;
+        cout << "gPointNegZ1 " << gPointNegZ << endl;
         svCurrent.matVol = vbMatNav_->findVolume(gPointNegZ);
-        if (svCurrent.matVol == 0) cout << "Volume is zero" << endl;
-        else cout << "Volume is not zero" << endl;
+        cout << "gPointNegZ2 " << gPointNegZ << endl;
+        //if (svCurrent.matVol == 0) cout << "Volume is zero" << endl;
+        //else cout << "Volume is not zero" << endl;
       } else {
 	svCurrent.magVol = vbField_->findVolume(gPointNorZ);
-        cout << "Validate the MatVolume" << endl;
+        cout << "gPointNorZ3 " << gPointNorZ << " " << &svCurrent.magVol << endl;
+        //cout << "Validate the MatVolume" << endl;
         svCurrent.matVol = vbMatNav_->findVolume(gPointNorZ);
-        if (svCurrent.matVol == 0) cout << "Volume is zero" << endl;
-        else cout << "Volume is not zero" << endl;
+        cout << "gPointNorZ4 " << gPointNorZ << " " << &svCurrent.matVol << endl;
+        //if (svCurrent.matVol == 0) cout << "Volume is zero" << endl;
+        //else cout << "Volume is not zero" << endl;
       }
       if (useIsYokeFlag_){
 	double curRad = svCurrent.r3.perp();
@@ -829,10 +830,12 @@ void SteppingHelixPropagator::getNextState(const SteppingHelixPropagator::StateI
     if (vbField_ != 0){
        if (vbField_->isZSymmetric()){
 	 svNext.magVol = vbField_->findVolume(gPointNegZ);
-         svNext.matVol = vbMatNav_->findVolume(gPointNegZ);
+         //svNext.matVol = vbMatNav_->findVolume(gPointNegZ);
        } else {
 	 svNext.magVol = vbField_->findVolume(gPointNorZ);
+         cout << "gPointNorZ3 in getNextState " << gPointNorZ << &svNext.magVol << endl;
          svNext.matVol = vbMatNav_->findVolume(gPointNegZ);
+         cout << "gPointNorZ4 in getNextState " << gPointNorZ << &svNext.matVol << endl;
        }
       if (useIsYokeFlag_){
 	double curRad = svNext.r3.perp();
@@ -1366,8 +1369,8 @@ double SteppingHelixPropagator::getDeDx(const SteppingHelixPropagator::StateInfo
 
   //FIXME SAV
   //insert new navigation here
-  cout << "YY line before the crash" << endl; 
-  std::cout <<  "This material type " << getMaterialVolType(sv.matVol)->name().name() << std::endl;
+  //cout << "YY line before the crash" << endl; 
+  //std::cout <<  "This material type " << getMaterialVolType(sv.matVol)->name().name() << std::endl;
 
   //Current old implementation
   //assume "Iron" .. seems to be quite the same for brass/iron/PbW04

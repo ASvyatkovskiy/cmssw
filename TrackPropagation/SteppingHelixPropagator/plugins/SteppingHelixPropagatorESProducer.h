@@ -18,7 +18,7 @@ class  SteppingHelixPropagatorESProducer: public edm::ESProducer{
   boost::shared_ptr<Propagator> _propagator;
   edm::ParameterSet pset_;
   VolumeBasedMatNav* vbAlField_;
-  //std::unique_ptr<VolumeBasedMatNav> vbAlField_;
+  //std::auto_ptr<VolumeBasedMatNav> vbAlField2_;
 
 };
 

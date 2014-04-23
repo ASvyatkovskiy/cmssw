@@ -35,6 +35,8 @@
 #include "TrackPropagation/SteppingHelixPropagator/interface/SteppingHelixStateInfo.h"
 #include "FWCore/ParameterSet/interface/ParameterSet.h"
 
+#include <boost/shared_ptr.hpp>
+
 class MagneticField;
 class VolumeBasedMagneticField;
 class MagVolume;
@@ -268,7 +270,7 @@ class SteppingHelixPropagator GCC11_FINAL : public Propagator {
 
  public:
   const VolumeBasedMatNav* vbMatNav_;
-  //std::unique_ptr<VolumeBasedMatNav> vbMatNav_;
+  //std::auto_ptr<VolumeBasedMatNav> vbMatNav_;
 
  private:
   typedef std::pair<TrajectoryStateOnSurface, double> TsosPP;

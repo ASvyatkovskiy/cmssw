@@ -37,14 +37,14 @@ MatVolume6Faces * MatBSector::findVolume(const GlobalPoint & gp, double toleranc
   for(vector<MatBRod*>::const_iterator irod = theRods.begin();
 	irod != theRods.end(); ++irod) {
     // TOFIX
-    if (verbose::debugOut) cout << "     Trying rod at phi " << (*irod)->minPhi()
+    //if (verbose::debugOut) 
+    cout << "     Trying rod at phi " << (*irod)->minPhi()
 				<< " " << phi << endl ;
     result = (*irod)->findVolume(gp, tolerance);
+    if (result!=0) cout << "Result is zero" << endl;
+
     if (result!=0) return result;
   }
 
   return 0;
 }
-
-
-

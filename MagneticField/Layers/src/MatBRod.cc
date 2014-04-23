@@ -58,11 +58,13 @@ MatVolume6Faces * MatBRod::findVolume(const GlobalPoint & gp, double tolerance) 
   }
   
   // TOFIX
-  if (verbose::debugOut) cout << "       Trying slab at Z " << theSlabs[bin]->minZ()
+  //if (verbose::debugOut) 
+  cout << "       Trying slab at Z " << theSlabs[bin]->minZ()
 			      << " " << Z << endl ;
   result = theSlabs[bin]->findVolume(gp, tolerance);
   // TOFIX
-  if (verbose::debugOut) cout << "***In guessed bslab"
+  //if (verbose::debugOut) 
+  cout << "***In guessed bslab"
 			      << (result==0? " failed " : " OK ") <<endl;  
 
   return result;

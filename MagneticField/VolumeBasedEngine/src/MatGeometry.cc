@@ -1,8 +1,8 @@
 /*
  *  See header file for a description of this class.
  *
- *  $Date: 2010/04/20 09:56:20 $
- *  $Revision: 1.18 $
+ *  $Date: 2013/03/12 13:44:05 $
+ *  $Revision: 1.22 $
  *  \author N. Amapane - INFN Torino
  */
 
@@ -15,6 +15,7 @@
 #include "Utilities/BinningTools/interface/PeriodicBinFinderInPhi.h"
 
 #include <FWCore/ParameterSet/interface/ParameterSet.h>
+#include "FWCore/Utilities/interface/isFinite.h"
 
 #include "MagneticField/Layers/interface/MagVerbosity.h"
 #include "FWCore/MessageLogger/interface/MessageLogger.h"
@@ -26,13 +27,13 @@ MatGeometry::MatGeometry(const edm::ParameterSet& config, std::vector<MatBLayer 
 			 std::vector<MatESector *> tes,
 			 std::vector<MatVolume6Faces*> tbv,
 			 std::vector<MatVolume6Faces*> tev) : 
-  lastVolume(0), theBLayers(tbl), theESectors(tes), theBVolumes(tbv), theEVolumes(tev)
+  lastVolume(0), theBLayers(tbl), theESectors(tes), theBVolumes(tbv), theEVolumes(tev), geometryVersion(0)
 {
-
-  cout << "Constructed MatGeometry" << endl;  
-
-  cacheLastVolume = true; //config.getUntrackedParameter<bool>("cacheLastVolume", true);
-  v_85l = "grid_1103l_090322_3_8t"; //(config.getParameter<std::string>("version")=="grid_85l_030919");
+ 
+  cout << "Calling constructor MatGeometry::MatGeometry" << endl;
+ 
+  cacheLastVolume = true;//config.getUntrackedParameter<bool>("cacheLastVolume", true);
+  geometryVersion = 90322; //config.getParameter<int>("geometryVersion");
 
   vector<double> rBorders;
 
@@ -54,7 +55,8 @@ MatGeometry::MatGeometry(const edm::ParameterSet& config, std::vector<MatBLayer 
 
   //FIXME assume sectors are already sorted in phi
   //FIXME: PeriodicBinFinderInPhi gets *center* of first bin
-  theEndcapBinFinder = new PeriodicBinFinderInPhi<float>(theESectors.front()->minPhi()+Geom::pi()/12., 12);
+  int nEBins = theESectors.size();
+  theEndcapBinFinder = new PeriodicBinFinderInPhi<float>(theESectors.front()->minPhi()+Geom::pi()/nEBins, nEBins);
 
 }
 
@@ -112,21 +114,13 @@ MatGeometry::findVolume1(const GlobalPoint & gp, double tolerance) const {
 // Use hierarchical structure for fast lookup.
 MatVolume* 
 MatGeometry::findVolume(const GlobalPoint & gp, double tolerance) const{
-
-  cout << "Entering MatGeometry::findVolume" << endl;
-
   // Check volume cache
   if (lastVolume!=0 && lastVolume->inside(gp)){
     return lastVolume;
   }
 
-  cout << "1" << endl;
-
   MatVolume * result=0;
   if (inBarrel(gp)) { // Barrel
-
-  cout << "2" << endl;
-
     double R = gp.perp();
     int bin = theBarrelBinFinder->binIndex(R);
     
@@ -139,11 +133,7 @@ MatGeometry::findVolume(const GlobalPoint & gp, double tolerance) const{
       if (result != 0) break;
     }
 
-  cout << "3" << endl;
-
   } else { // Endcaps
-
-  cout << "2b" << endl;
     Geom::Phi<float> phi = gp.phi();
     int bin = theEndcapBinFinder->binIndex(phi);
     if (verbose::debugOut) cout << "Trying endcap sector at phi "
@@ -151,8 +141,6 @@ MatGeometry::findVolume(const GlobalPoint & gp, double tolerance) const{
     result = theESectors[bin]->findVolume(gp, tolerance);
     if (verbose::debugOut) cout << "***In guessed esector "
 		    << (result==0? " failed " : " OK ") <<endl;
-
-  cout << "3b" << endl;
   }
 
 
@@ -164,12 +152,8 @@ MatGeometry::findVolume(const GlobalPoint & gp, double tolerance) const{
     result = findVolume(gp, 0.03);
   }
 
-  cout << "4" << endl;
-
   if (cacheLastVolume) lastVolume = result;
 
-
-  if (result == 0) cout << "bad5" << endl; 
   return result;
 }
 
@@ -181,19 +165,18 @@ bool MatGeometry::inBarrel(const GlobalPoint& gp) const {
   float R = gp.perp();
 
   // FIXME: Get these dimensions from the builder. 
-  // For this we can wait the next generation of tables, when the picture 
-  // may be more complicated
-  if (v_85l){
-    return (Z<634.49 || (R>308.755 && Z<661.01));
-  } else {
+  if (geometryVersion>=120812) {
+    return (Z<350. ||
+	    (R>172.4 && Z<633.29) || 
+	    (R>308.7345 && Z<662.01));    
+  } else if (geometryVersion>=90812) {
+    return (Z<350. ||
+	    (R>172.4 && Z<633.89) || 
+	    (R>308.755 && Z<662.01));
+  } else { // version 71212
     return (Z<350. ||
 	    (R>172.4 && Z<633.29) || 
 	    (R>308.755 && Z<661.01));
   }
-}
-
-
-bool MatGeometry::isZSymmetric() const {
-  return v_85l;
 }
 

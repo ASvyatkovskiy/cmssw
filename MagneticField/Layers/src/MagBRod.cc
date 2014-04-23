@@ -23,8 +23,9 @@ MagBRod::MagBRod(vector<MagBSlab*>& slabs, Geom::Phi<float> phiMin) :
   theBinFinder(0)
 {
   // TOFIX
-//   if (verbose.debugOut) cout << "Building MagBRod with " << theSlabs.size()
-// 		  << " slabs, minPhi " << thePhiMin << endl;
+//   if (verbose.debugOut)
+  // cout << "Building MagBRod with " << theSlabs.size()
+ //		  << " slabs, minPhi " << thePhiMin << endl;
   
   if (theSlabs.size()>1) { // Set the binfinder
     vector<double> zBorders;
@@ -58,12 +59,14 @@ MagVolume * MagBRod::findVolume(const GlobalPoint & gp, double tolerance) const 
   }
   
   // TOFIX
-  if (verbose::debugOut) cout << "       Trying slab at Z " << theSlabs[bin]->minZ()
-			      << " " << Z << endl ;
+  //if (verbose::debugOut)
+  // cout << "       Trying slab at Z " << theSlabs[bin]->minZ()
+//			      << " " << Z << endl ;
   result = theSlabs[bin]->findVolume(gp, tolerance);
   // TOFIX
-  if (verbose::debugOut) cout << "***In guessed bslab"
-			      << (result==0? " failed " : " OK ") <<endl;  
+  //if (verbose::debugOut)
+  //cout << "***In guessed bslab"
+//			      << (result==0? " failed " : " OK ") <<endl;  
 
   return result;
 }

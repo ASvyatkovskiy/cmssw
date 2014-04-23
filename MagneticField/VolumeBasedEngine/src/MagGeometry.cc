@@ -33,6 +33,8 @@ MagGeometry::MagGeometry(const edm::ParameterSet& config, std::vector<MagBLayer 
   cacheLastVolume = config.getUntrackedParameter<bool>("cacheLastVolume", true);
   geometryVersion = config.getParameter<int>("geometryVersion");
 
+  //cout << "XYZ paramater set " << cacheLastVolume << " " << geometryVersion << endl; 
+
   vector<double> rBorders;
 
   for (vector<MagBLayer *>::const_iterator ilay = theBLayers.begin();

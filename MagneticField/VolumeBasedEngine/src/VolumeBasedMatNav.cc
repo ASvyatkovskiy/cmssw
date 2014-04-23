@@ -15,7 +15,7 @@ VolumeBasedMatNav::VolumeBasedMatNav(const edm::ParameterSet& config,
   maxR(rMax),
   maxZ(zMax)
 { 
-   cout << "Constructed VolumeBasedMatNav" << endl;
+  cout << "Calling VolumeBasedMatNav::VolumeBasedMatNav constructor" << endl;
 }
 
 VolumeBasedMatNav::VolumeBasedMatNav(const VolumeBasedMatNav& vbf) : 
@@ -29,8 +29,6 @@ VolumeBasedMatNav::~VolumeBasedMatNav(){
 
 const MatVolume * VolumeBasedMatNav::findVolume(const GlobalPoint & gp) const
 {
-  cout << "Entering const MatVolume * VolumeBasedMatNav::findVolume(const GlobalPoint & gp) const" << endl;
-
   return field->findVolume(gp);
 }
 

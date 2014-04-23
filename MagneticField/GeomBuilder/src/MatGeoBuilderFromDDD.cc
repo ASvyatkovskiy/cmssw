@@ -224,15 +224,15 @@ void MatGeoBuilderFromDDD::build(const DDCompactView & cpva)
   //----------------------------------------------------------------------
   // Print summary information
 
-  if (debug) {
+  //if (debug) {
     cout << "-----------------------" << endl;
-    cout << "SUMMARY: Barrel " << endl;
+    cout << "Mat SUMMARY: Barrel " << endl;
     summary(bVolumes);
     
-    cout << endl << "SUMMARY: Endcaps " << endl;
+    cout << endl << "Mat SUMMARY: Endcaps " << endl;
     summary(eVolumes);
     cout << "-----------------------" << endl;
-  }
+  //}
 
 
   //----------------------------------------------------------------------

@@ -29,7 +29,9 @@ SteppingHelixPropagatorESProducer::SteppingHelixPropagatorESProducer(const edm::
   setWhatProduced(this,myname);
 }
 
-SteppingHelixPropagatorESProducer::~SteppingHelixPropagatorESProducer() {}
+SteppingHelixPropagatorESProducer::~SteppingHelixPropagatorESProducer() {
+  delete vbAlField_;
+}
 
 boost::shared_ptr<Propagator> 
 SteppingHelixPropagatorESProducer::produce(const TrackingComponentsRecord & iRecord){ 
@@ -73,13 +75,11 @@ SteppingHelixPropagatorESProducer::produce(const TrackingComponentsRecord & iRec
                                90322,
                                false);
   builder.build(*cpv);
-  cout << "in MatGeoBuilderFromDDD before the crash" << endl;
   edm::ESHandle<MagneticField> paramField;
   ////if (pset_.getParameter<bool>("useParametrizedTrackerField")) {;
   ////  iRecord.getRecord<IdealMagneticFieldRecord>().get(pset_.getParameter<string>("paramLabel"),paramField);
   ////}
   vbAlField_ = new VolumeBasedMatNav(pset_,builder.barrelLayers(), builder.endcapSectors(), builder.barrelVolumes(), builder.endcapVolumes(), builder.maxR(), builder.maxZ());
-  cout << "in MatGeoBuilderFromDDD never seen this line" << endl;
   shProp->vbMatNav_ = vbAlField_;
   //FIXME
 

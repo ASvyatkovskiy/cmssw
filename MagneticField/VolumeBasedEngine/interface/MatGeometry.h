@@ -40,15 +40,20 @@ public:
   /// Find a volume
   MatVolume * findVolume(const GlobalPoint & gp, double tolerance=0.) const;
 
-  bool isZSymmetric() const;
+  // Deprecated, will be removed
+  bool isZSymmetric() const {return false;}
 
+  // FIXME: only for temporary tests, should be removed.
   const std::vector<MatVolume6Faces*> & barrelVolumes() const {return theBVolumes;}
   const std::vector<MatVolume6Faces*> & endcapVolumes() const {return theEVolumes;}
 
 private:
 
+  friend class MatGeometryExerciser; // for debug purposes
+
   // Linear search (for debug purposes only)
   MatVolume * findVolume1(const GlobalPoint & gp, double tolerance=0.) const;
+
 
   bool inBarrel(const GlobalPoint& gp) const;
 
@@ -57,6 +62,7 @@ private:
   std::vector<MatBLayer *> theBLayers;
   std::vector<MatESector *> theESectors;
 
+  // FIXME: only for temporary tests, should be removed.
   std::vector<MatVolume6Faces*> theBVolumes;
   std::vector<MatVolume6Faces*> theEVolumes;
 
@@ -64,7 +70,7 @@ private:
   PeriodicBinFinderInPhi<float> * theEndcapBinFinder;
 
   bool cacheLastVolume;
-  bool v_85l;
+  int geometryVersion;
 };
 #endif
 
