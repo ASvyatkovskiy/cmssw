@@ -33,7 +33,7 @@ struct   ErrorFrameTransformer {
     //Standard rotation matrix in 3D, from SO(3) group
     Surface::RotationType r=surf.rotation();
     //Construct full matrix. Does not have to be symmatric 
-    AlgebraicSymMatrix66 ROT;
+    AlgebraicMatrix66 ROT;
     ROT[0][0] = r.xx();
     ROT[1][1] = r.yy();
     ROT[0][1] = r.xy();
@@ -73,7 +73,7 @@ struct   ErrorFrameTransformer {
     AlgebraicSymMatrix66 GE = ge.matrix();
  
     Surface::RotationType r=surf.rotation();
-    AlgebraicSymMatrix66 ROT; //transposed
+    AlgebraicMatrix66 ROT; //transposed
     ROT[0][0] = r.xx();
     ROT[1][1] = r.yy();
     ROT[0][1] = r.yx();
@@ -110,7 +110,7 @@ struct   ErrorFrameTransformer {
 
     AlgebraicSymMatrix66 GE = ge.matrix(); //6x6  
     Surface::RotationType r=surf.rotation();
-    AlgebraicSymMatrix66 ROT; //transposed
+    AlgebraicMatrix66 ROT; //transposed
     ROT[0][0] = r.xx();
     ROT[1][1] = r.yy();
     ROT[0][1] = r.yx();
