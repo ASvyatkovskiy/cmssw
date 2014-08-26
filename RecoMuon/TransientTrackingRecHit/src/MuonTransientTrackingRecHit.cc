@@ -51,21 +51,32 @@ GlobalError MuonTransientTrackingRecHit::globalDirectionError() const
   return ErrorFrameTransformer().transform( localDirectionError(), (det()->surface()));
 }
 
-
 AlgebraicSymMatrix MuonTransientTrackingRecHit::parametersError() const {
   
   AlgebraicSymMatrix err = GenericTransientTrackingRecHit::parametersError();
- 
-    LocalError lape = det()->localAlignmentError();
-    if (lape.valid()) {
+
+  const AlignmentPositionError* APE = det()->alignmentPositionError();
+
+  if (APE == NULL) return err;
+
+  if (APE->valid()) {
+      LocalErrorExtended lape = APE->localError(); 
 
     // Just for speed up the code, the "else" branch can handle also the case of dim = 1.
-    if(err.num_row() == 1) err[0][0] += lape.xx();
-    else{
+    if(err.num_row() == 1) { 
+       err[0][0] += lape.cxx();
+    } else{
       AlgebraicSymMatrix lapeMatrix(5,0);
-      lapeMatrix[3][3] = lape.xx();
-      lapeMatrix[3][4] = lape.xy();
-      lapeMatrix[4][4] = lape.yy();
+
+      //rotational
+      lapeMatrix[1][1] = lape.cxx();
+      lapeMatrix[1][2] = lape.cyx();
+      lapeMatrix[2][2] = lape.cyy();
+
+      //translational
+      lapeMatrix[3][3] = lape.cphixphix();
+      lapeMatrix[3][4] = lape.cphiyphix();
+      lapeMatrix[4][4] = lape.cphiyphiy();
       
       AlgebraicSymMatrix lapeMatrixProj = lapeMatrix.similarity(projectionMatrix());
       
@@ -79,6 +90,8 @@ AlgebraicSymMatrix MuonTransientTrackingRecHit::parametersError() const {
       err += lapeMatrixProj;
     }
   }
+  //delete lape;
+
   return err;
 }
 
