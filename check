@@ -1,0 +1,386 @@
+Reading cached build data
+>> Local Products Rules ..... started
+>> Local Products Rules ..... done
+>> Building CMSSW version CMSSW_7_2_X_2014-08-23-0200 ----
+------- copying files from src/Alignment/TrackerAlignment/scripts -------
+>> copied Looper.sh
+>> Creating project symlinks
+>> Subsystem BigProducts built
+>> Entering Package RecoLocalTracker/SiStripRecHitConverter
+>> copied MYmergelines.sh
+>> copied PlotTrackStats.C
+>> Entering Package DataFormats/GeometrySurface
+>> copied PrescaleLooper.tpl
+>> Entering Package DataFormats/TrackerRecHit2D
+>> Entering Package Geometry/CommonDetUnit
+>> Entering Package DataFormats/TrackingRecHit
+>> Entering Package Geometry/TrackerGeometryBuilder
+>> copied SkimLooper.tpl
+>> Entering Package FastSimulation/TrackingRecHitProducer
+>> Entering Package TrackingTools/TransientTrackingRecHit
+>> copied TkAlCaRecoPrescaling.ALCARECOTkAlCosmics0T.tpl
+>> copied TkAlCaRecoPrescaling.ALCARECOTkAlMinBias.tpl
+>> Entering Package FastSimulation/TrajectoryManager
+>> copied TkAlCaRecoSkimming.ALCARECOTkAlCosmics0T.tpl
+>> Entering Package DataFormats/GeometryCommonDetAlgo
+>> copied TkAlCaRecoSkimming.ALCARECOTkAlMinBias.tpl
+>> Entering Package Geometry/TrackingGeometryAligner
+>> Entering Package Geometry/CSCGeometry
+>> copied mergemytree_cfg.tpl
+>> copied move_files_castor.sh
+>> Entering Package Geometry/DTGeometry
+>> copied presc_exec.tpl
+>> Entering Package Geometry/GEMGeometry
+>> Entering Package Geometry/RPCGeometry
+>> copied query.py
+>> copied skim_exec.tpl
+>> copied taglist.txt
+>> Entering Package Alignment/CommonAlignment
+>> Entering Package Alignment/ReferenceTrajectories
+>> Entering Package RecoTracker/TransientTrackingRecHit
+>> Entering Package Alignment/TrackerAlignment
+>> Entering Package RecoMuon/TransientTrackingRecHit
+>> Entering Package CalibTracker/SiStripESProducers
+>> Entering Package CalibTracker/SiStripLorentzAngle
+>> Entering Package Fireworks/Geometry
+>> Entering Package RecoTracker/DebugTools
+>> Entering Package RecoTracker/MeasurementDet
+>> Leaving Package Geometry/TrackingGeometryAligner
+>> Package Geometry/TrackingGeometryAligner built
+>> Leaving Package DataFormats/TrackingRecHit
+>> Leaving Package DataFormats/TrackerRecHit2D
+>> Leaving Package DataFormats/GeometryCommonDetAlgo
+>> Leaving Package DataFormats/GeometrySurface
+>> Package DataFormats/GeometryCommonDetAlgo built
+>> Package DataFormats/TrackerRecHit2D built
+>> Package DataFormats/GeometrySurface built
+>> Package DataFormats/TrackingRecHit built
+>> Building shared library tmp/slc6_amd64_gcc481/src/Alignment/CommonAlignment/src/AlignmentCommonAlignment/libAlignmentCommonAlignment.so
+>> Compiling edm plugin /afs/cern.ch/user/a/asvyatko/APEStudyDev_Repo/CMSSW_7_2_X_2014-08-23-0200/src/Alignment/TrackerAlignment/test/ApeAdder.cpp 
+>> Compiling  /afs/cern.ch/user/a/asvyatko/APEStudyDev_Repo/CMSSW_7_2_X_2014-08-23-0200/src/CalibTracker/SiStripESProducers/src/SiStripNoiseESSource.cc 
+>> Compiling  /afs/cern.ch/user/a/asvyatko/APEStudyDev_Repo/CMSSW_7_2_X_2014-08-23-0200/src/CalibTracker/SiStripESProducers/src/SiStripHashedDetIdESProducer.cc 
+>> Compiling  /afs/cern.ch/user/a/asvyatko/APEStudyDev_Repo/CMSSW_7_2_X_2014-08-23-0200/src/CalibTracker/SiStripESProducers/src/SiStripLatencyGenerator.cc 
+>> Compiling  /afs/cern.ch/user/a/asvyatko/APEStudyDev_Repo/CMSSW_7_2_X_2014-08-23-0200/src/CalibTracker/SiStripESProducers/src/SiStripPedestalsESSource.cc 
+>> Compiling  /afs/cern.ch/user/a/asvyatko/APEStudyDev_Repo/CMSSW_7_2_X_2014-08-23-0200/src/CalibTracker/SiStripESProducers/src/SiStripNoisesGenerator.cc 
+>> Compiling  /afs/cern.ch/user/a/asvyatko/APEStudyDev_Repo/CMSSW_7_2_X_2014-08-23-0200/src/CalibTracker/SiStripESProducers/src/SiStripLorentzAngleGenerator.cc 
+Copying tmp/slc6_amd64_gcc481/src/Alignment/CommonAlignment/src/AlignmentCommonAlignment/libAlignmentCommonAlignment.so to productstore area:
+Leaving library rule at Alignment/CommonAlignment
+>> Compiling  /afs/cern.ch/user/a/asvyatko/APEStudyDev_Repo/CMSSW_7_2_X_2014-08-23-0200/src/CalibTracker/SiStripESProducers/src/SiStripPedestalsGenerator.cc 
+>> Compiling  /afs/cern.ch/user/a/asvyatko/APEStudyDev_Repo/CMSSW_7_2_X_2014-08-23-0200/src/CalibTracker/SiStripESProducers/src/SiStripThresholdGenerator.cc 
+Entering library rule at src/CalibTracker/SiStripESProducers/plugins
+Entering library rule at src/CalibTracker/SiStripESProducers/plugins
+Entering library rule at src/CalibTracker/SiStripESProducers/plugins
+Entering library rule at src/CalibTracker/SiStripESProducers/plugins
+>> Building edm plugin tmp/slc6_amd64_gcc481/src/CalibTracker/SiStripESProducers/test/testCalibTrackerSiStripESProducers/libtestCalibTrackerSiStripESProducers.so
+>> Compiling edm plugin /afs/cern.ch/user/a/asvyatko/APEStudyDev_Repo/CMSSW_7_2_X_2014-08-23-0200/src/CalibTracker/SiStripLorentzAngle/plugins/MeasureLA.cc 
+>> Compiling edm plugin /afs/cern.ch/user/a/asvyatko/APEStudyDev_Repo/CMSSW_7_2_X_2014-08-23-0200/src/CalibTracker/SiStripLorentzAngle/plugins/EnsembleCalibrationLA.cc 
+>> Compiling edm plugin /afs/cern.ch/user/a/asvyatko/APEStudyDev_Repo/CMSSW_7_2_X_2014-08-23-0200/src/CalibTracker/SiStripLorentzAngle/plugins/SiStripCalibLorentzAngle.cc 
+>> Compiling edm plugin /afs/cern.ch/user/a/asvyatko/APEStudyDev_Repo/CMSSW_7_2_X_2014-08-23-0200/src/CalibTracker/SiStripLorentzAngle/plugins/SiStripLAProfileBooker.cc 
+>> Compiling edm plugin /afs/cern.ch/user/a/asvyatko/APEStudyDev_Repo/CMSSW_7_2_X_2014-08-23-0200/src/CalibTracker/SiStripLorentzAngle/plugins/modules.cc 
+Leaving library rule at src/CalibTracker/SiStripESProducers/test
+>> Compiling  /afs/cern.ch/user/a/asvyatko/APEStudyDev_Repo/CMSSW_7_2_X_2014-08-23-0200/src/Fireworks/Geometry/src/DisplayGeomRecord.cc 
+>> Compiling  /afs/cern.ch/user/a/asvyatko/APEStudyDev_Repo/CMSSW_7_2_X_2014-08-23-0200/src/Fireworks/Geometry/src/DisplayPlugin.cc 
+>> Compiling  /afs/cern.ch/user/a/asvyatko/APEStudyDev_Repo/CMSSW_7_2_X_2014-08-23-0200/src/Fireworks/Geometry/src/DisplayPluginFactory.cc 
+>> Compiling  /afs/cern.ch/user/a/asvyatko/APEStudyDev_Repo/CMSSW_7_2_X_2014-08-23-0200/src/Fireworks/Geometry/src/ES_FWRecoGeometry.cc 
+>> Compiling  /afs/cern.ch/user/a/asvyatko/APEStudyDev_Repo/CMSSW_7_2_X_2014-08-23-0200/src/Fireworks/Geometry/src/ES_FWTGeoRecoGeometry.cc 
+>> Compiling  /afs/cern.ch/user/a/asvyatko/APEStudyDev_Repo/CMSSW_7_2_X_2014-08-23-0200/src/Fireworks/Geometry/src/FWRecoGeometryESProducer.cc 
+>> Compiling  /afs/cern.ch/user/a/asvyatko/APEStudyDev_Repo/CMSSW_7_2_X_2014-08-23-0200/src/Fireworks/Geometry/src/FWRecoGeometryRecord.cc 
+>> Compiling  /afs/cern.ch/user/a/asvyatko/APEStudyDev_Repo/CMSSW_7_2_X_2014-08-23-0200/src/Fireworks/Geometry/src/FWTGeoRecoGeometry.cc 
+>> Compiling  /afs/cern.ch/user/a/asvyatko/APEStudyDev_Repo/CMSSW_7_2_X_2014-08-23-0200/src/Fireworks/Geometry/src/FWTGeoRecoGeometryESProducer.cc 
+>> Compiling  /afs/cern.ch/user/a/asvyatko/APEStudyDev_Repo/CMSSW_7_2_X_2014-08-23-0200/src/Fireworks/Geometry/src/FWTGeoRecoGeometryRecord.cc 
+>> Compiling  /afs/cern.ch/user/a/asvyatko/APEStudyDev_Repo/CMSSW_7_2_X_2014-08-23-0200/src/Fireworks/Geometry/src/Reg_TGeoManager.cc 
+>> Compiling  /afs/cern.ch/user/a/asvyatko/APEStudyDev_Repo/CMSSW_7_2_X_2014-08-23-0200/src/Fireworks/Geometry/src/TGeoFromDddService.cc 
+>> Compiling  /afs/cern.ch/user/a/asvyatko/APEStudyDev_Repo/CMSSW_7_2_X_2014-08-23-0200/src/Fireworks/Geometry/src/TGeoMgrFromDdd.cc 
+>> Building edm plugin tmp/slc6_amd64_gcc481/src/Fireworks/Geometry/plugins/FireworksGeometryValidateGeometryPlugin/libFireworksGeometryValidateGeometryPlugin.so
+>> Building capability library tmp/slc6_amd64_gcc481/src/TrackingTools/TransientTrackingRecHit/src/TrackingToolsTransientTrackingRecHit/libTrackingToolsTransientTrackingRecHitCapabilities.so
+Entering library rule at RecoTracker/MeasurementDet
+Leaving library rule at src/Fireworks/Geometry/plugins
+>> Checking EDM Class Version for src/TrackingTools/TransientTrackingRecHit/src/classes_def.xml in libTrackingToolsTransientTrackingRecHitCapabilities.so
+>> Compiling  /afs/cern.ch/user/a/asvyatko/APEStudyDev_Repo/CMSSW_7_2_X_2014-08-23-0200/src/RecoTracker/MeasurementDet/src/LayerCollector.cc 
+>> Building LCG reflex dict from header file src/RecoTracker/MeasurementDet/src/classes.h
+>> Compiling  /afs/cern.ch/user/a/asvyatko/APEStudyDev_Repo/CMSSW_7_2_X_2014-08-23-0200/src/RecoTracker/MeasurementDet/src/MeasurementTracker.cc 
+>> Compiling  /afs/cern.ch/user/a/asvyatko/APEStudyDev_Repo/CMSSW_7_2_X_2014-08-23-0200/src/RecoTracker/MeasurementDet/src/MeasurementTrackerEvent.cc 
+>> Compiling  /afs/cern.ch/user/a/asvyatko/APEStudyDev_Repo/CMSSW_7_2_X_2014-08-23-0200/src/RecoTracker/MeasurementDet/src/StartingLayerFinder.cc 
+>> Compiling  /afs/cern.ch/user/a/asvyatko/APEStudyDev_Repo/CMSSW_7_2_X_2014-08-23-0200/src/RecoTracker/MeasurementDet/src/TkMeasurementDetSet.cc 
+[?1034hAutomatic building of dictionaries now off
+@@@@ ----> OK  EDM Class Version 
+Entering library rule at src/RecoTracker/TransientTrackingRecHit/plugins
+Entering library rule at src/RecoTracker/TransientTrackingRecHit/test
+>> Building shared library tmp/slc6_amd64_gcc481/src/RecoLocalTracker/SiStripRecHitConverter/src/RecoLocalTrackerSiStripRecHitConverter/libRecoLocalTrackerSiStripRecHitConverter.so
+Copying tmp/slc6_amd64_gcc481/src/RecoLocalTracker/SiStripRecHitConverter/src/RecoLocalTrackerSiStripRecHitConverter/libRecoLocalTrackerSiStripRecHitConverter.so to productstore area:
+>> Leaving Package FastSimulation/TrackingRecHitProducer
+>> Package FastSimulation/TrackingRecHitProducer built
+>> Leaving Package FastSimulation/TrajectoryManager
+>> Package FastSimulation/TrajectoryManager built
+>> Subsystem DataFormats built
+>> Leaving Package Geometry/CSCGeometry
+>> Package Geometry/CSCGeometry built
+>> Leaving Package Geometry/CommonDetUnit
+>> Package Geometry/CommonDetUnit built
+Leaving library rule at RecoLocalTracker/SiStripRecHitConverter
+>> Leaving Package Geometry/DTGeometry
+>> Leaving Package Geometry/GEMGeometry
+>> Package Geometry/GEMGeometry built
+>> Package Geometry/DTGeometry built
+>> Leaving Package Geometry/RPCGeometry
+>> Package Geometry/RPCGeometry built
+>> Leaving Package Geometry/TrackerGeometryBuilder
+>> Package Geometry/TrackerGeometryBuilder built
+>> Building binary test_AlignableObjectId
+>> Building shared library tmp/slc6_amd64_gcc481/src/Alignment/TrackerAlignment/src/AlignmentTrackerAlignment/libAlignmentTrackerAlignment.so
+Copying tmp/slc6_amd64_gcc481/src/Alignment/CommonAlignment/test/test_AlignableObjectId/test_AlignableObjectId to productstore area:
+>> Building shared library tmp/slc6_amd64_gcc481/src/RecoMuon/TransientTrackingRecHit/src/RecoMuonTransientTrackingRecHit/libRecoMuonTransientTrackingRecHit.so
+>> Compiling edm plugin /afs/cern.ch/user/a/asvyatko/APEStudyDev_Repo/CMSSW_7_2_X_2014-08-23-0200/src/CalibTracker/SiStripESProducers/plugins/fake/Phase2TrackerCablingCfgESSource.cc 
+Copying tmp/slc6_amd64_gcc481/src/Alignment/TrackerAlignment/src/AlignmentTrackerAlignment/libAlignmentTrackerAlignment.so to productstore area:
+>> Compiling edm plugin /afs/cern.ch/user/a/asvyatko/APEStudyDev_Repo/CMSSW_7_2_X_2014-08-23-0200/src/CalibTracker/SiStripESProducers/plugins/fake/SiStripApvGainBuilderFromTag.cc 
+Copying tmp/slc6_amd64_gcc481/src/RecoMuon/TransientTrackingRecHit/src/RecoMuonTransientTrackingRecHit/libRecoMuonTransientTrackingRecHit.so to productstore area:
+Leaving library rule at Alignment/TrackerAlignment
+>> Compiling edm plugin /afs/cern.ch/user/a/asvyatko/APEStudyDev_Repo/CMSSW_7_2_X_2014-08-23-0200/src/CalibTracker/SiStripESProducers/plugins/fake/SiStripFedCablingFakeESSource.cc 
+Leaving library rule at RecoMuon/TransientTrackingRecHit
+>> Compiling edm plugin /afs/cern.ch/user/a/asvyatko/APEStudyDev_Repo/CMSSW_7_2_X_2014-08-23-0200/src/CalibTracker/SiStripESProducers/plugins/fake/SiStripHashedDetIdFakeESSource.cc 
+>> Compiling edm plugin /afs/cern.ch/user/a/asvyatko/APEStudyDev_Repo/CMSSW_7_2_X_2014-08-23-0200/src/CalibTracker/SiStripESProducers/plugins/fake/SiStripNoiseNormalizedWithApvGainBuilder.cc 
+>> Compiling edm plugin /afs/cern.ch/user/a/asvyatko/APEStudyDev_Repo/CMSSW_7_2_X_2014-08-23-0200/src/CalibTracker/SiStripESProducers/plugins/fake/SiStripQualityFakeESSource.cc 
+>> Compiling edm plugin /afs/cern.ch/user/a/asvyatko/APEStudyDev_Repo/CMSSW_7_2_X_2014-08-23-0200/src/CalibTracker/SiStripESProducers/plugins/fake/modules.cc 
+>> Compiling edm plugin /afs/cern.ch/user/a/asvyatko/APEStudyDev_Repo/CMSSW_7_2_X_2014-08-23-0200/src/CalibTracker/SiStripESProducers/plugins/DBWriter/SiStripFedCablingManipulator.cc 
+--->> genreflex: INFO: Parsing file /afs/cern.ch/user/a/asvyatko/APEStudyDev_Repo/CMSSW_7_2_X_2014-08-23-0200/src/RecoTracker/MeasurementDet/src/classes.h with GCC_XML OK
+--->> genreflex: INFO: Generating Reflex Dictionary
+class MeasurementTrackerEvent
+class edm::Wrapper<MeasurementTrackerEvent>
+>> Compiling edm plugin /afs/cern.ch/user/a/asvyatko/APEStudyDev_Repo/CMSSW_7_2_X_2014-08-23-0200/src/CalibTracker/SiStripESProducers/plugins/DBWriter/modules.cc 
+>> Compiling edm plugin /afs/cern.ch/user/a/asvyatko/APEStudyDev_Repo/CMSSW_7_2_X_2014-08-23-0200/src/CalibTracker/SiStripESProducers/plugins/services/modules.cc 
+>> Compiling edm plugin /afs/cern.ch/user/a/asvyatko/APEStudyDev_Repo/CMSSW_7_2_X_2014-08-23-0200/src/CalibTracker/SiStripESProducers/plugins/real/SiStripBackPlaneCorrectionDepESProducer.cc 
+>> Compiling edm plugin /afs/cern.ch/user/a/asvyatko/APEStudyDev_Repo/CMSSW_7_2_X_2014-08-23-0200/src/CalibTracker/SiStripESProducers/plugins/real/SiStripDelayESProducer.cc 
+>> Compiling edm plugin /afs/cern.ch/user/a/asvyatko/APEStudyDev_Repo/CMSSW_7_2_X_2014-08-23-0200/src/CalibTracker/SiStripESProducers/plugins/real/SiStripLorentzAngleDepESProducer.cc 
+>> Compiling edm plugin /afs/cern.ch/user/a/asvyatko/APEStudyDev_Repo/CMSSW_7_2_X_2014-08-23-0200/src/CalibTracker/SiStripESProducers/plugins/real/SiStripQualityESProducer.cc 
+>> Compiling edm plugin /afs/cern.ch/user/a/asvyatko/APEStudyDev_Repo/CMSSW_7_2_X_2014-08-23-0200/src/CalibTracker/SiStripESProducers/plugins/real/modules.cc 
+@@@@ Running edmWriteConfigs for testCalibTrackerSiStripESProducers
+@@@@ Running edmWriteConfigs for FireworksGeometryValidateGeometryPlugin
+--- Registered EDM Plugin: testCalibTrackerSiStripESProducers
+@@@@ Running edmWriteConfigs for TrackingToolsTransientTrackingRecHitCapabilities
+Entering library rule at RecoTracker/DebugTools
+>> Compiling LCG dictionary: tmp/slc6_amd64_gcc481/src/RecoTracker/MeasurementDet/src/RecoTrackerMeasurementDet/a/xr.cc
+--- Registered EDM Plugin: TrackingToolsTransientTrackingRecHitCapabilities
+Entering library rule at src/RecoTracker/MeasurementDet/plugins
+Entering library rule at src/RecoTracker/MeasurementDet/test
+>> Compiling edm plugin /afs/cern.ch/user/a/asvyatko/APEStudyDev_Repo/CMSSW_7_2_X_2014-08-23-0200/src/RecoTracker/TransientTrackingRecHit/plugins/TkTransientTrackingRecHitBuilderESProducer.cc 
+>> Compiling edm plugin /afs/cern.ch/user/a/asvyatko/APEStudyDev_Repo/CMSSW_7_2_X_2014-08-23-0200/src/RecoTracker/TransientTrackingRecHit/plugins/module.cc 
+--- Registered EDM Plugin: FireworksGeometryValidateGeometryPlugin
+>> Compiling  /afs/cern.ch/user/a/asvyatko/APEStudyDev_Repo/CMSSW_7_2_X_2014-08-23-0200/src/RecoTracker/TransientTrackingRecHit/test/TrackerHitSizes.cpp 
+>> Compiling edm plugin /afs/cern.ch/user/a/asvyatko/APEStudyDev_Repo/CMSSW_7_2_X_2014-08-23-0200/src/RecoTracker/TransientTrackingRecHit/test/TTRHBuilderTest.cc 
+>> Compiling edm plugin /afs/cern.ch/user/a/asvyatko/APEStudyDev_Repo/CMSSW_7_2_X_2014-08-23-0200/src/RecoTracker/TransientTrackingRecHit/test/modules.cc 
+>> Building edm plugin tmp/slc6_amd64_gcc481/src/RecoLocalTracker/SiStripRecHitConverter/plugins/RecoLocalTrackerSiStripRecHitConverterPlugins/libRecoLocalTrackerSiStripRecHitConverterPlugins.so
+>> Building edm plugin tmp/slc6_amd64_gcc481/src/RecoLocalTracker/SiStripRecHitConverter/test/RecoLocalTrackerSiStripRecHitConverterTestModules/libRecoLocalTrackerSiStripRecHitConverterTestModules.so
+Leaving library rule at src/RecoLocalTracker/SiStripRecHitConverter/plugins
+>> Subsystem FastSimulation built
+>> Subsystem Geometry built
+>> Building shared library tmp/slc6_amd64_gcc481/src/RecoTracker/TransientTrackingRecHit/src/RecoTrackerTransientTrackingRecHit/libRecoTrackerTransientTrackingRecHit.so
+>> Building edm plugin tmp/slc6_amd64_gcc481/src/Alignment/TrackerAlignment/plugins/AlignmentTrackerAlignmentPlugin/libAlignmentTrackerAlignmentPlugin.so
+Leaving library rule at src/RecoLocalTracker/SiStripRecHitConverter/test
+>> Building edm plugin tmp/slc6_amd64_gcc481/src/Alignment/TrackerAlignment/test/AlignmentTrackerAlignment_test/libAlignmentTrackerAlignment_test.so
+>> Building edm plugin tmp/slc6_amd64_gcc481/src/RecoMuon/TransientTrackingRecHit/plugins/RecoMuonTransientTrackingRecHitPlugins/libRecoMuonTransientTrackingRecHitPlugins.so
+>> Building shared library tmp/slc6_amd64_gcc481/src/CalibTracker/SiStripESProducers/src/CalibTrackerSiStripESProducers/libCalibTrackerSiStripESProducers.so
+Copying tmp/slc6_amd64_gcc481/src/RecoTracker/TransientTrackingRecHit/src/RecoTrackerTransientTrackingRecHit/libRecoTrackerTransientTrackingRecHit.so to productstore area:
+Leaving library rule at src/Alignment/TrackerAlignment/plugins
+Leaving library rule at RecoTracker/TransientTrackingRecHit
+>> Building edm plugin tmp/slc6_amd64_gcc481/src/CalibTracker/SiStripLorentzAngle/plugins/CalibTrackerSiStripLorentzAnglePlugins/libCalibTrackerSiStripLorentzAnglePlugins.so
+>> Building shared library tmp/slc6_amd64_gcc481/src/Fireworks/Geometry/src/FireworksGeometry/libFireworksGeometry.so
+Leaving library rule at src/RecoMuon/TransientTrackingRecHit/plugins
+>> Leaving Package TrackingTools/TransientTrackingRecHit
+>> Package TrackingTools/TransientTrackingRecHit built
+Entering library rule at src/RecoTracker/DebugTools/plugins
+>> Compiling  /afs/cern.ch/user/a/asvyatko/APEStudyDev_Repo/CMSSW_7_2_X_2014-08-23-0200/src/RecoTracker/DebugTools/src/FTSFromSimHitFactory.cc 
+>> Compiling  /afs/cern.ch/user/a/asvyatko/APEStudyDev_Repo/CMSSW_7_2_X_2014-08-23-0200/src/RecoTracker/DebugTools/src/FixTrackHitPattern.cc 
+Leaving library rule at src/Alignment/TrackerAlignment/test
+>> Compiling  /afs/cern.ch/user/a/asvyatko/APEStudyDev_Repo/CMSSW_7_2_X_2014-08-23-0200/src/RecoTracker/DebugTools/src/GetTrackTrajInfo.cc 
+Copying tmp/slc6_amd64_gcc481/src/CalibTracker/SiStripESProducers/src/CalibTrackerSiStripESProducers/libCalibTrackerSiStripESProducers.so to productstore area:
+Copying tmp/slc6_amd64_gcc481/src/Fireworks/Geometry/src/FireworksGeometry/libFireworksGeometry.so to productstore area:
+Leaving library rule at src/CalibTracker/SiStripLorentzAngle/plugins
+>> Compiling edm plugin /afs/cern.ch/user/a/asvyatko/APEStudyDev_Repo/CMSSW_7_2_X_2014-08-23-0200/src/RecoTracker/MeasurementDet/plugins/MaskedMeasurementTrackerEventProducer.cc 
+Leaving library rule at CalibTracker/SiStripESProducers
+>> Compiling edm plugin /afs/cern.ch/user/a/asvyatko/APEStudyDev_Repo/CMSSW_7_2_X_2014-08-23-0200/src/RecoTracker/MeasurementDet/plugins/MeasurementTrackerESProducer.cc 
+>> Compiling edm plugin /afs/cern.ch/user/a/asvyatko/APEStudyDev_Repo/CMSSW_7_2_X_2014-08-23-0200/src/RecoTracker/MeasurementDet/plugins/MeasurementTrackerImpl.cc 
+>> Compiling edm plugin /afs/cern.ch/user/a/asvyatko/APEStudyDev_Repo/CMSSW_7_2_X_2014-08-23-0200/src/RecoTracker/MeasurementDet/plugins/MeasurementTrackerEventProducer.cc 
+Leaving library rule at Fireworks/Geometry
+>> Compiling edm plugin /afs/cern.ch/user/a/asvyatko/APEStudyDev_Repo/CMSSW_7_2_X_2014-08-23-0200/src/RecoTracker/MeasurementDet/plugins/NonPropagatingDetMeasurements.cc 
+>> Compiling edm plugin /afs/cern.ch/user/a/asvyatko/APEStudyDev_Repo/CMSSW_7_2_X_2014-08-23-0200/src/RecoTracker/MeasurementDet/plugins/RecHitPropagator.cc 
+>> Compiling edm plugin /afs/cern.ch/user/a/asvyatko/APEStudyDev_Repo/CMSSW_7_2_X_2014-08-23-0200/src/RecoTracker/MeasurementDet/plugins/TkGluedMeasurementDet.cc 
+>> Compiling edm plugin /afs/cern.ch/user/a/asvyatko/APEStudyDev_Repo/CMSSW_7_2_X_2014-08-23-0200/src/RecoTracker/MeasurementDet/plugins/TkPixelMeasurementDet.cc 
+>> Compiling edm plugin /afs/cern.ch/user/a/asvyatko/APEStudyDev_Repo/CMSSW_7_2_X_2014-08-23-0200/src/RecoTracker/MeasurementDet/plugins/TkStripMeasurementDet.cc 
+>> Compiling edm plugin /afs/cern.ch/user/a/asvyatko/APEStudyDev_Repo/CMSSW_7_2_X_2014-08-23-0200/src/RecoTracker/MeasurementDet/plugins/module.cc 
+>> Compiling edm plugin /afs/cern.ch/user/a/asvyatko/APEStudyDev_Repo/CMSSW_7_2_X_2014-08-23-0200/src/RecoTracker/MeasurementDet/test/MeasurementTrackerUpdator.cc 
+@@@@ Running edmWriteConfigs for RecoLocalTrackerSiStripRecHitConverterPlugins
+@@@@ Running edmWriteConfigs for RecoLocalTrackerSiStripRecHitConverterTestModules
+>> Leaving Package Alignment/CommonAlignment
+>> Package Alignment/CommonAlignment built
+>> Building shared library tmp/slc6_amd64_gcc481/src/Alignment/ReferenceTrajectories/src/AlignmentReferenceTrajectories/libAlignmentReferenceTrajectories.so
+--- Registered EDM Plugin: RecoLocalTrackerSiStripRecHitConverterPlugins
+>> Building edm plugin tmp/slc6_amd64_gcc481/src/Alignment/TrackerAlignment/plugins/AlignmentTrackerAlignmentSkimPlugin/libAlignmentTrackerAlignmentSkimPlugin.so
+@@@@ Running edmWriteConfigs for AlignmentTrackerAlignmentPlugin
+--- Registered EDM Plugin: RecoLocalTrackerSiStripRecHitConverterTestModules
+@@@@ Running edmWriteConfigs for AlignmentTrackerAlignment_test
+@@@@ Running edmWriteConfigs for RecoMuonTransientTrackingRecHitPlugins
+--- Registered EDM Plugin: RecoMuonTransientTrackingRecHitPlugins
+>> Building edm plugin tmp/slc6_amd64_gcc481/src/CalibTracker/SiStripESProducers/plugins/CalibTrackerSiStripGeomESProducersPlugins/libCalibTrackerSiStripGeomESProducersPlugins.so
+>> Building edm plugin tmp/slc6_amd64_gcc481/src/CalibTracker/SiStripESProducers/plugins/CalibTrackerSiStripESProducersServicesPlugins/libCalibTrackerSiStripESProducersServicesPlugins.so
+--- Registered EDM Plugin: AlignmentTrackerAlignmentPlugin
+--- Registered EDM Plugin: AlignmentTrackerAlignment_test
+>> Building edm plugin tmp/slc6_amd64_gcc481/src/CalibTracker/SiStripESProducers/plugins/CalibTrackerSiStripRealESProducersPlugins/libCalibTrackerSiStripRealESProducersPlugins.so
+@@@@ Running edmWriteConfigs for CalibTrackerSiStripLorentzAnglePlugins
+Copying tmp/slc6_amd64_gcc481/src/Alignment/ReferenceTrajectories/src/AlignmentReferenceTrajectories/libAlignmentReferenceTrajectories.so to productstore area:
+Leaving library rule at src/Alignment/TrackerAlignment/plugins
+>> Building edm plugin tmp/slc6_amd64_gcc481/src/Fireworks/Geometry/plugins/FireworksGeometryFWRecoGeometryESProducerPlugin/libFireworksGeometryFWRecoGeometryESProducerPlugin.so
+Leaving library rule at Alignment/ReferenceTrajectories
+>> Building edm plugin tmp/slc6_amd64_gcc481/src/Fireworks/Geometry/plugins/FireworksGeometryDumpSimGeometryPlugin/libFireworksGeometryDumpSimGeometryPlugin.so
+--- Registered EDM Plugin: CalibTrackerSiStripLorentzAnglePlugins
+Leaving library rule at src/CalibTracker/SiStripESProducers/plugins
+>> Building edm plugin tmp/slc6_amd64_gcc481/src/Fireworks/Geometry/plugins/FireworksGeometryDumpFWRecoGeometryPlugin/libFireworksGeometryDumpFWRecoGeometryPlugin.so
+>> Building edm plugin tmp/slc6_amd64_gcc481/src/Fireworks/Geometry/plugins/FireworksGeometryPlugins/libFireworksGeometryPlugins.so
+Leaving library rule at src/CalibTracker/SiStripESProducers/plugins
+>> Building edm plugin tmp/slc6_amd64_gcc481/src/Fireworks/Geometry/plugins/FireworksGeometryDumpFWTGeoRecoGeometryPlugin/libFireworksGeometryDumpFWTGeoRecoGeometryPlugin.so
+Leaving library rule at src/CalibTracker/SiStripESProducers/plugins
+>> Building edm plugin tmp/slc6_amd64_gcc481/src/Fireworks/Geometry/plugins/FireworksDisplayGeomPlugin/libFireworksDisplayGeomPlugin.so
+Leaving library rule at src/Fireworks/Geometry/plugins
+>> Building edm plugin tmp/slc6_amd64_gcc481/src/Fireworks/Geometry/plugins/FireworksGeometryTGeoMgrFromDddPlugin/libFireworksGeometryTGeoMgrFromDddPlugin.so
+Leaving library rule at src/Fireworks/Geometry/plugins
+>> Building edm plugin tmp/slc6_amd64_gcc481/src/Fireworks/Geometry/plugins/FireworksGeometryFWTGeoRecoGeometryESProducerPlugin/libFireworksGeometryFWTGeoRecoGeometryESProducerPlugin.so
+Leaving library rule at src/Fireworks/Geometry/plugins
+>> Subsystem TrackingTools built
+Leaving library rule at src/Fireworks/Geometry/plugins
+Leaving library rule at src/Fireworks/Geometry/plugins
+>> Compiling edm plugin /afs/cern.ch/user/a/asvyatko/APEStudyDev_Repo/CMSSW_7_2_X_2014-08-23-0200/src/RecoTracker/DebugTools/plugins/CkfDebugTrackCandidateMaker.cc 
+>> Compiling edm plugin /afs/cern.ch/user/a/asvyatko/APEStudyDev_Repo/CMSSW_7_2_X_2014-08-23-0200/src/RecoTracker/DebugTools/plugins/CkfDebugger.cc 
+>> Compiling edm plugin /afs/cern.ch/user/a/asvyatko/APEStudyDev_Repo/CMSSW_7_2_X_2014-08-23-0200/src/RecoTracker/DebugTools/plugins/Modules.cc 
+Leaving library rule at src/Fireworks/Geometry/plugins
+>> Compiling edm plugin /afs/cern.ch/user/a/asvyatko/APEStudyDev_Repo/CMSSW_7_2_X_2014-08-23-0200/src/RecoTracker/DebugTools/plugins/TestHits.cc 
+Leaving library rule at src/Fireworks/Geometry/plugins
+>> Compiling edm plugin /afs/cern.ch/user/a/asvyatko/APEStudyDev_Repo/CMSSW_7_2_X_2014-08-23-0200/src/RecoTracker/DebugTools/plugins/TestOutliers.cc 
+>> Compiling edm plugin /afs/cern.ch/user/a/asvyatko/APEStudyDev_Repo/CMSSW_7_2_X_2014-08-23-0200/src/RecoTracker/DebugTools/plugins/TestSmoothHits.cc 
+Leaving library rule at src/Fireworks/Geometry/plugins
+>> Compiling edm plugin /afs/cern.ch/user/a/asvyatko/APEStudyDev_Repo/CMSSW_7_2_X_2014-08-23-0200/src/RecoTracker/DebugTools/plugins/TestTrackHits.cc 
+>> Compiling edm plugin /afs/cern.ch/user/a/asvyatko/APEStudyDev_Repo/CMSSW_7_2_X_2014-08-23-0200/src/RecoTracker/DebugTools/plugins/TrackAlgoCompareUtil.cc 
+>> Compiling capabilities tmp/slc6_amd64_gcc481/src/RecoTracker/MeasurementDet/src/RecoTrackerMeasurementDet/a/seal_cap.cc 
+>> Building edm plugin tmp/slc6_amd64_gcc481/src/RecoTracker/TransientTrackingRecHit/plugins/RecoTrackerTransientTrackingRecHitPlugins/libRecoTrackerTransientTrackingRecHitPlugins.so
+>> Building binary TrackerHitSizes
+Copying tmp/slc6_amd64_gcc481/src/RecoTracker/TransientTrackingRecHit/test/TrackerHitSizes/TrackerHitSizes to productstore area:
+Leaving library rule at src/RecoTracker/TransientTrackingRecHit/plugins
+>> Building edm plugin tmp/slc6_amd64_gcc481/src/RecoTracker/TransientTrackingRecHit/test/TTRHBuilderTest/libTTRHBuilderTest.so
+>> Leaving Package RecoLocalTracker/SiStripRecHitConverter
+>> Package RecoLocalTracker/SiStripRecHitConverter built
+>> Building edm plugin tmp/slc6_amd64_gcc481/src/Alignment/ReferenceTrajectories/plugins/AlignmentReferenceTrajectoriesPlugins/libAlignmentReferenceTrajectoriesPlugins.so
+Leaving library rule at src/RecoTracker/TransientTrackingRecHit/test
+@@@@ Running edmWriteConfigs for AlignmentTrackerAlignmentSkimPlugin
+Leaving library rule at src/Alignment/ReferenceTrajectories/plugins
+>> Leaving Package RecoMuon/TransientTrackingRecHit
+>> Package RecoMuon/TransientTrackingRecHit built
+@@@@ Running edmWriteConfigs for CalibTrackerSiStripGeomESProducersPlugins
+--- Registered EDM Plugin: AlignmentTrackerAlignmentSkimPlugin
+>> Building edm plugin tmp/slc6_amd64_gcc481/src/CalibTracker/SiStripESProducers/plugins/CalibTrackerSiStripFakeESProducersPlugins/libCalibTrackerSiStripFakeESProducersPlugins.so
+--- Registered EDM Plugin: CalibTrackerSiStripGeomESProducersPlugins
+@@@@ Running edmWriteConfigs for CalibTrackerSiStripESProducersServicesPlugins
+@@@@ Running edmWriteConfigs for CalibTrackerSiStripRealESProducersPlugins
+--- Registered EDM Plugin: CalibTrackerSiStripESProducersServicesPlugins
+>> Leaving Package CalibTracker/SiStripLorentzAngle
+>> Package CalibTracker/SiStripLorentzAngle built
+@@@@ Running edmWriteConfigs for FireworksGeometryFWRecoGeometryESProducerPlugin
+Leaving library rule at src/CalibTracker/SiStripESProducers/plugins
+@@@@ Running edmWriteConfigs for FireworksGeometryDumpSimGeometryPlugin
+--- Registered EDM Plugin: CalibTrackerSiStripRealESProducersPlugins
+@@@@ Running edmWriteConfigs for FireworksGeometryDumpFWRecoGeometryPlugin
+@@@@ Running edmWriteConfigs for FireworksGeometryPlugins
+--- Registered EDM Plugin: FireworksGeometryFWRecoGeometryESProducerPlugin
+@@@@ Running edmWriteConfigs for FireworksGeometryDumpFWTGeoRecoGeometryPlugin
+--- Registered EDM Plugin: FireworksGeometryDumpSimGeometryPlugin
+@@@@ Running edmWriteConfigs for FireworksDisplayGeomPlugin
+--- Registered EDM Plugin: FireworksGeometryDumpFWRecoGeometryPlugin
+@@@@ Running edmWriteConfigs for FireworksGeometryFWTGeoRecoGeometryESProducerPlugin
+@@@@ Running edmWriteConfigs for FireworksGeometryTGeoMgrFromDddPlugin
+--- Registered EDM Plugin: FireworksGeometryPlugins
+@@@@ Running edmWriteConfigs for RecoTrackerTransientTrackingRecHitPlugins
+@@@@ Running edmWriteConfigs for TTRHBuilderTest
+--- Registered EDM Plugin: FireworksGeometryDumpFWTGeoRecoGeometryPlugin
+>> Subsystem RecoLocalTracker built
+@@@@ Running edmWriteConfigs for AlignmentReferenceTrajectoriesPlugins
+>> Leaving Package Alignment/TrackerAlignment
+>> Package Alignment/TrackerAlignment built
+>> Subsystem RecoMuon built
+--- Registered EDM Plugin: FireworksDisplayGeomPlugin
+>> Building edm plugin tmp/slc6_amd64_gcc481/src/CalibTracker/SiStripESProducers/plugins/CalibTrackerSiStripESProducersDBWriterPlugins/libCalibTrackerSiStripESProducersDBWriterPlugins.so
+--- Registered EDM Plugin: RecoTrackerTransientTrackingRecHitPlugins
+@@@@ Running edmWriteConfigs for CalibTrackerSiStripFakeESProducersPlugins
+>> Building shared library tmp/slc6_amd64_gcc481/src/RecoTracker/MeasurementDet/src/RecoTrackerMeasurementDet/libRecoTrackerMeasurementDet.so
+--- Registered EDM Plugin: FireworksGeometryTGeoMgrFromDddPlugin
+--- Registered EDM Plugin: FireworksGeometryFWTGeoRecoGeometryESProducerPlugin
+>> Leaving Package Fireworks/Geometry
+>> Package Fireworks/Geometry built
+>> Subsystem Fireworks built
+--- Registered EDM Plugin: TTRHBuilderTest
+>> Leaving Package RecoTracker/TransientTrackingRecHit
+>> Package RecoTracker/TransientTrackingRecHit built
+--- Registered EDM Plugin: AlignmentReferenceTrajectoriesPlugins
+>> Leaving Package Alignment/ReferenceTrajectories
+>> Package Alignment/ReferenceTrajectories built
+>> Subsystem Alignment built
+--- Registered EDM Plugin: CalibTrackerSiStripFakeESProducersPlugins
+Copying tmp/slc6_amd64_gcc481/src/RecoTracker/MeasurementDet/src/RecoTrackerMeasurementDet/libRecoTrackerMeasurementDet.so to productstore area:
+Leaving library rule at src/CalibTracker/SiStripESProducers/plugins
+@@@@ Running edmWriteConfigs for CalibTrackerSiStripESProducersDBWriterPlugins
+Leaving library rule at RecoTracker/MeasurementDet
+>> Building shared library tmp/slc6_amd64_gcc481/src/RecoTracker/DebugTools/src/RecoTrackerDebugTools/libRecoTrackerDebugTools.so
+>> Building edm plugin tmp/slc6_amd64_gcc481/src/RecoTracker/MeasurementDet/plugins/RecoTrackerMeasurementDetPlugins/libRecoTrackerMeasurementDetPlugins.so
+>> Building capability library tmp/slc6_amd64_gcc481/src/RecoTracker/MeasurementDet/src/RecoTrackerMeasurementDet/libRecoTrackerMeasurementDetCapabilities.so
+>> Building edm plugin tmp/slc6_amd64_gcc481/src/RecoTracker/MeasurementDet/test/RecoTrackerMeasurementDetTest/libRecoTrackerMeasurementDetTest.so
+--- Registered EDM Plugin: CalibTrackerSiStripESProducersDBWriterPlugins
+>> Leaving Package CalibTracker/SiStripESProducers
+>> Package CalibTracker/SiStripESProducers built
+>> Subsystem CalibTracker built
+>> Checking EDM Class Version for src/RecoTracker/MeasurementDet/src/classes_def.xml in libRecoTrackerMeasurementDetCapabilities.so
+Copying tmp/slc6_amd64_gcc481/src/RecoTracker/DebugTools/src/RecoTrackerDebugTools/libRecoTrackerDebugTools.so to productstore area:
+Leaving library rule at src/RecoTracker/MeasurementDet/test
+@@@@ Running edmWriteConfigs for RecoTrackerMeasurementDetTest
+Leaving library rule at RecoTracker/DebugTools
+Leaving library rule at src/RecoTracker/MeasurementDet/plugins
+@@@@ Running edmWriteConfigs for RecoTrackerMeasurementDetPlugins
+--- Registered EDM Plugin: RecoTrackerMeasurementDetTest
+--- Registered EDM Plugin: RecoTrackerMeasurementDetPlugins
+[?1034hAutomatic building of dictionaries now off
+@@@@ ----> OK  EDM Class Version 
+@@@@ Running edmWriteConfigs for RecoTrackerMeasurementDetCapabilities
+--- Registered EDM Plugin: RecoTrackerMeasurementDetCapabilities
+>> Leaving Package RecoTracker/MeasurementDet
+>> Package RecoTracker/MeasurementDet built
+>> Building edm plugin tmp/slc6_amd64_gcc481/src/RecoTracker/DebugTools/plugins/RecoTrackerDebugToolsPlugins/libRecoTrackerDebugToolsPlugins.so
+Leaving library rule at src/RecoTracker/DebugTools/plugins
+@@@@ Running edmWriteConfigs for RecoTrackerDebugToolsPlugins
+--- Registered EDM Plugin: RecoTrackerDebugToolsPlugins
+>> Leaving Package RecoTracker/DebugTools
+>> Package RecoTracker/DebugTools built
+>> Subsystem RecoTracker built
+>> Local Products Rules ..... started
+>> Local Products Rules ..... done
+gmake[1]: Entering directory `/afs/cern.ch/user/a/asvyatko/APEStudyDev_Repo/CMSSW_7_2_X_2014-08-23-0200'
+@@@@ Refreshing Plugins:edmPluginRefresh
+>> Creating project symlinks
+>> Done python_symlink
+>> Compiling python modules cfipython/slc6_amd64_gcc481
+>> Compiling python modules python
+>> Compiling python modules src/Alignment/TrackerAlignment/python
+>> Compiling python modules src/CalibTracker/SiStripLorentzAngle/python
+>> Compiling python modules src/CalibTracker/SiStripESProducers/python
+>> Compiling python modules src/Alignment/ReferenceTrajectories/python
+>> Compiling python modules src/FastSimulation/TrackingRecHitProducer/python
+>> Compiling python modules src/FastSimulation/TrajectoryManager/python
+>> Compiling python modules src/Fireworks/Geometry/python
+>> Compiling python modules src/Geometry/CSCGeometry/python
+>> Compiling python modules src/Geometry/CommonDetUnit/python
+>> Compiling python modules src/Geometry/GEMGeometry/python
+>> Compiling python modules src/Geometry/DTGeometry/python
+>> Compiling python modules src/Geometry/RPCGeometry/python
+>> Compiling python modules src/Geometry/TrackerGeometryBuilder/python
+>> Compiling python modules src/RecoLocalTracker/SiStripRecHitConverter/python
+>> Compiling python modules src/RecoMuon/TransientTrackingRecHit/python
+>> Compiling python modules src/RecoTracker/DebugTools/python
+>> Compiling python modules src/RecoTracker/MeasurementDet/python
+>> Compiling python modules src/RecoTracker/TransientTrackingRecHit/python
+>> Pluging of all type refreshed.
+>> All python modules compiled
+gmake[1]: Leaving directory `/afs/cern.ch/user/a/asvyatko/APEStudyDev_Repo/CMSSW_7_2_X_2014-08-23-0200'

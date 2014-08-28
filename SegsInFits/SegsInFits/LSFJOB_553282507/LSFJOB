@@ -1,0 +1,27 @@
+#! /bin/sh
+
+$LSB_TRAPSIGS
+$LSB_RCP1
+$LSB_RCP2
+$LSB_RCP3
+# LSBATCH: User input
+( cat <<_USER_\SCRIPT_
+#!/bin/csh
+cd /afs/cern.ch/user/a/asvyatko/APEStudy2014/CMSSW_7_1_0_pre9/src/SegsInFits/SegsInFits
+eval `scramv1 runtime -csh`
+set CFG_FILE="GlbAlexey_corr_APEsON_1000_1000um_xAPE_2000um.py"
+cmsRun $CFG_FILE
+
+_USER_SCRIPT_
+) > $LSB_CHKFILENAME.shell
+chmod u+x $LSB_CHKFILENAME.shell
+/usr/local/lsf/etc/job_starter '$LSB_JOBFILENAME.shell'
+saveExit=$?
+/bin/rm -f $LSB_JOBFILENAME.shell
+(exit $saveExit)
+
+ExitStat=$?
+wait
+# LSBATCH: End user input
+true
+exit `expr $? "|" $ExitStat`

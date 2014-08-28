@@ -1,0 +1,246 @@
+120818_155041: /uscmst1/prod/grid/CRAB_2_8_2/python/crab.py -create -submit -cfg crab_muonGlbAlexey_corr_APEsOFF_nophi.cfg
+120818_155409: /uscmst1/prod/grid/CRAB_2_8_2/python/crab.py -create -submit -cfg crab_muonGlbAlexey_corr_APEsOFF_nophi.cfg
+120818_155453: /uscmst1/prod/grid/CRAB_2_8_2/python/crab.py -create -submit -cfg crab_muonGlbAlexey_corr_APEsON_nophi.cfg
+120818_155517: /uscmst1/prod/grid/CRAB_2_8_2/python/crab.py -create -submit -cfg crab_GlbAlexey_corr_APEsOFF_nophi.cfg
+120818_155543: /uscmst1/prod/grid/CRAB_2_8_2/python/crab.py -create -submit -cfg crab_GlbAlexey_corr_APEsON_nophi.cfg
+120820_093319: /uscmst1/prod/grid/CRAB_2_8_2/python/crab.py -c crab_0_120818_155409 -status
+120820_094309: /uscmst1/prod/grid/CRAB_2_8_2/python/crab.py -c crab_0_120818_155409 -getoutput 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101
+120820_094339: /uscmst1/prod/grid/CRAB_2_8_2/python/crab.py -c crab_0_120818_155453 -status
+120820_094342: /uscmst1/prod/grid/CRAB_2_8_2/python/crab.py -c crab_0_120818_155453 -getoutput 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101
+120820_094412: /uscmst1/prod/grid/CRAB_2_8_2/python/crab.py -c crab_0_120818_155517 -status
+120820_094416: /uscmst1/prod/grid/CRAB_2_8_2/python/crab.py -c crab_0_120818_155517 -getoutput 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101
+120820_094444: /uscmst1/prod/grid/CRAB_2_8_2/python/crab.py -c crab_0_120818_155543 -status
+120820_094448: /uscmst1/prod/grid/CRAB_2_8_2/python/crab.py -c crab_0_120818_155543 -getoutput 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101
+120820_130428: /uscmst1/prod/grid/CRAB_2_8_2/python/crab.py -create -submit -cfg crab_muonGlbAlexey_corr_APEsOFF_nophi.cfg
+120820_130458: /uscmst1/prod/grid/CRAB_2_8_2/python/crab.py -create -submit -cfg crab_muonGlbAlexey_corr_APEsON_nophi.cfg
+120820_130522: /uscmst1/prod/grid/CRAB_2_8_2/python/crab.py -create -submit -cfg crab_GlbAlexey_corr_APEsOFF_nophi.cfg
+120820_130544: /uscmst1/prod/grid/CRAB_2_8_2/python/crab.py -create -submit -cfg crab_GlbAlexey_corr_APEsON_nophi.cfg
+120820_150625: /uscmst1/prod/grid/CRAB_2_8_2/python/crab.py -c crab_0_120820_130428 -status
+120820_150629: /uscmst1/prod/grid/CRAB_2_8_2/python/crab.py -c crab_0_120820_130428 -getoutput 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101
+120820_150653: /uscmst1/prod/grid/CRAB_2_8_2/python/crab.py -c crab_0_120820_130458 -status
+120820_150656: /uscmst1/prod/grid/CRAB_2_8_2/python/crab.py -c crab_0_120820_130458 -getoutput 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101
+120820_150720: /uscmst1/prod/grid/CRAB_2_8_2/python/crab.py -c crab_0_120820_130522 -status
+120820_150723: /uscmst1/prod/grid/CRAB_2_8_2/python/crab.py -c crab_0_120820_130522 -getoutput 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101
+120820_150746: /uscmst1/prod/grid/CRAB_2_8_2/python/crab.py -c crab_0_120820_130544 -status
+120820_150750: /uscmst1/prod/grid/CRAB_2_8_2/python/crab.py -c crab_0_120820_130544 -getoutput 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101
+120820_212731: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -create -submit -cfg crab_muonGlbAlexey_corr_APEsOFF_nophi.cfg
+120820_212811: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -create -submit -cfg crab_muonGlbAlexey_corr_APEsON_nophi.cfg
+120820_212833: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -create -submit -cfg crab_GlbAlexey_corr_APEsOFF_nophi.cfg
+120820_212856: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -create -submit -cfg crab_GlbAlexey_corr_APEsON_nophi.cfg
+120821_130209: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -create -submit -cfg crab_GlbAlexey_APEsOFF_RECO.cfg
+120821_132541: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -create -submit -cfg crab_GlbAlexey_APEsOFF_RECO.cfg
+120821_145603: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -status -c crab_0_120821_132541
+120821_145638: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -get all -c crab_0_120821_132541
+120821_145726: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -publish -c crab_0_120821_132541
+120821_152525: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -status -c crab_0_120821_132541
+120821_152743: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -resubmit 8,13,31,51,57,3,1,10-12,14-20,23-26,29-30,33-34,36-39,41,46-47,52-53,55,59-62,64-65,68-69,72,74,76-82,84-86,90-95,98,100-101 -c crab_0_120821_132541
+120821_154758: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -status -c crab_0_120821_132541
+120821_154808: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -kill all -c crab_0_120821_132541
+120821_161227: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -create -submit -cfg crab_GlbAlexey_APEsOFF_RECO.cfg
+120821_161310: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -create -submit -cfg crab_GlbAlexey_APEsON_RECO.cfg
+120821_191105: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -c crab_0_120821_161227 -status
+120821_191110: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -c crab_0_120821_161227 -getoutput 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101
+120821_191153: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -c crab_0_120821_161310 -status
+120821_191156: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -c crab_0_120821_161310 -getoutput 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101
+120821_191507: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -status -c crab_0_120821_161227
+120821_191520: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -status -c crab_0_120821_161310
+120821_191905: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -status -c crab_0_120821_161310
+120821_191935: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -resubmit 3,2,4-5,9,14,18-19,21,23-32,34-37,39,41-42,44-46,52-54,56-57,62-63,65-67,69-72,74-75,79,82,84-85,88-90,93,95,97-99 -c crab_0_120821_161310
+120821_192024: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -status -c crab_0_120821_161227
+120821_192052: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -resubmit 3,1-2,4,7-11,14-15,21-23,25-29,31-32,35-40,43,45-48,50-53,55,57-61,63-64,66,68,70,72-77,79,82,84,86-91,93-97 -c crab_0_120821_161227
+120821_232515: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -status -c crab_0_120821_161227
+120821_232524: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -get all -c crab_0_120821_161227
+120821_232603: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -get 1-4,7-11,14-15,21-23,25-29,31-32,35-40,43,45-48,50-53,55,57-61,63-64,66,68,70,72-77,79,82,84,86-91,93-97 -c crab_0_120821_161227
+120821_232749: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -get 1-4,7-11,14-15,21-23,25-29,31-32,35-40,43,45-48,50-53,55,57-61,63-64,66,68,70,72-77,79,82,84,86-91,93-97 -c crab_0_120821_161227
+120821_232832: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -status -c crab_0_120821_161227
+120821_232855: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -status -c crab_0_120821_161310
+120821_232919: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -get 2-5,9,14,18-19,21,23-32,34-37,39,41-42,44-46,52-54,56-57,62-63,65-67,69-72,74-75,79,82,84-85,88-90,93,95,97-99 -c crab_0_120821_161310
+120821_232938: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -get 2-5,9,14,18-19,21,23-32,34-37,39,41-42,44-46,52-54,56-57,62-63,65-67,69-72,74-75,79,82,84-85,88-90,93,95,97-99 -c crab_0_120821_161310
+120821_233022: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -status -c crab_0_120821_161310
+120821_233434: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -resubmit 3,97 -c crab_0_120821_161310
+120821_233448: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -status -c crab_0_120821_161227
+120821_233515: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -resubmit 2,3 -c crab_0_120821_161227
+120821_234851: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -status -c crab_0_120821_161310
+120821_234906: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -status -c crab_0_120821_161227
+120822_002301: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -status -c crab_0_120821_161227
+120822_002318: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -get 2,3 -c crab_0_120821_161227
+120822_002414: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -get 2,3 -c crab_0_120821_161227
+120822_002425: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -status -c crab_0_120821_161310
+120822_002447: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -status -c crab_0_120821_161310
+120822_002459: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -get 3,97 -c crab_0_120821_161310
+120822_002814: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -publish crab_0_120821_161227
+120822_100333: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -c crab_0_120821_161227 -status
+120822_100339: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -c crab_0_120821_161310 -status
+120822_100645: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -status -c crab_0_120821_161227
+120822_103835: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -create -submit -cfg crab_GlbAlexey_APEsOFF_RECO.cfg
+120822_103921: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -create -submit -cfg crab_GlbAlexey_APEsON_RECO.cfg
+120822_135343: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -status -c crab_0_120822_103835
+120822_135400: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -get all -c crab_0_120822_103835
+120822_135506: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -status -c crab_0_120822_103835
+120822_135533: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -resubmit 3,18 -c crab_0_120822_103835
+120822_135549: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -status -c crab_0_120822_103921
+120822_135557: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -get all -c crab_0_120822_103921
+120822_135645: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -status -c crab_0_120822_103921
+120822_135709: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -resubmit 3,4 -c crab_0_120822_103921
+120822_183953: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -status -c crab_0_120822_103835
+120822_184119: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -status -c crab_0_120822_103835
+120822_184128: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -get 3,18 -c crab_0_120822_103835
+120822_184146: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -publish all -c crab_0_120822_103835
+120822_190401: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -status -c crab_0_120822_103921
+120822_190444: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -get 3,4 -c crab_0_120822_103921
+120822_190456: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -publish all -c crab_0_120822_103921
+120822_194144: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -create -submit -cfg crab_GlbAlexey_corr_APEsON_nophi_test.cfg
+120822_194219: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -create -submit -cfg crab_GlbAlexey_corr_APEsON_nophi_test.cfg
+120822_194553: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -create -submit -cfg crab_GlbAlexey_corr_APEsON_nophi_test.cfg
+120822_194747: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -create -submit -cfg crab_GlbAlexey_corr_APEsON_nophi_test.cfg
+120827_093426: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -create -submit -cfg crab_GlbAlexey_corr_APEsON_nophi_test.cfg
+120827_102115: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -status -c crab_0_120827_093426
+120827_102133: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -get all -c crab_0_120827_093426
+120827_135615: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -create -submit -cfg crab_GlbAlexey_corr_APEsON_nophi_test.cfg
+120827_171106: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -create -submit -cfg crab_GlbIDEAL_APEsOFF_nophi.cfg
+120827_171148: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -create -submit -cfg crab_GlbIDEAL_APEsON_nophi.cfg
+120827_171216: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -create -submit -cfg crab_muonGlbIDEAL_APEsOFF_nophi.cfg
+120827_171240: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -create -submit -cfg crab_muonGlbIDEAL_APEsON_nophi.cfg
+120827_172042: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -status -c crab_0_120827_135615
+120827_172255: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -get all -c crab_0_120827_135615
+120828_082215: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -create -submit -cfg crab_GlbAlexey_corr_APEsON_nophi_test.cfg
+120828_085804: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -c crab_0_120827_171106 -status
+120828_085810: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -c crab_0_120827_171106 -getoutput 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101
+120828_085820: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -c crab_0_120827_171148 -status
+120828_085824: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -c crab_0_120827_171148 -getoutput 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101
+120828_085834: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -c crab_0_120827_171216 -status
+120828_085838: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -c crab_0_120827_171216 -getoutput 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101
+120828_085847: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -c crab_0_120827_171240 -status
+120828_085851: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -c crab_0_120827_171240 -getoutput 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101
+120828_090402: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -c crab_0_120827_171106 -status
+120828_090405: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -c crab_0_120827_171148 -status
+120828_090409: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -c crab_0_120827_171216 -status
+120828_090412: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -c crab_0_120827_171240 -status
+120828_090915: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -c crab_0_120827_171106 -status
+120828_090918: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -c crab_0_120827_171148 -status
+120828_090922: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -c crab_0_120827_171216 -status
+120828_090925: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -c crab_0_120827_171240 -status
+120828_091019: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -status -c crab_0_120828_082215
+120828_091119: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -get all -c crab_0_120828_082215
+120828_091255: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -create -submit -cfg crab_GlbAlexey_corr_APEsON_nophi_test.cfg
+120828_091829: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -status -c crab_0_120828_091255
+120828_092452: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -create -submit -cfg crab_GlbIDEAL_APEsOFF_nophi.cfg
+120828_092521: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -create -submit -cfg crab_GlbIDEAL_APEsON_nophi.cfg
+120828_092546: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -create -submit -cfg crab_muonGlbIDEAL_APEsOFF_nophi.cfg
+120828_092611: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -create -submit -cfg crab_muonGlbIDEAL_APEsON_nophi.cfg
+120828_092730: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -status -c crab_0_120828_091255
+120828_092751: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -get 11-27,29-63,65-68,70,72-73 -c crab_0_120828_091255
+120828_100838: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -status -c crab_0_120828_091255
+120828_100858: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -get all -c crab_0_120828_091255
+120828_100908: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -status -c crab_0_120828_091255
+120828_100950: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -create -submit -cfg crab_GlbAlexey_corr_APEsON_nophi_test.cfg
+120828_151954: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -create -submit -cfg crab_GlbAlexey_corr_APEsOFF_nophi.cfg
+120828_152050: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -create -submit -cfg crab_GlbAlexey_corr_APEsON_nophi.cfg
+120828_152126: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -create -submit -cfg crab_muonGlbAlexey_corr_APEsOFF_nophi.cfg
+120828_152206: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -create -submit -cfg crab_muonGlbAlexey_corr_APEsON_nophi.cfg
+120828_154151: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -status -c crab_0_120828_100950
+120828_154226: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -get all -c crab_0_120828_100950
+120828_154455: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -create -submit -cfg crab_GlbAlexey_corr_APEsON_nophi_test.cfg
+120828_172627: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -c crab_0_120828_092452 -status
+120828_172659: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -c crab_0_120828_092452 -getoutput 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101
+120828_172731: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -c crab_0_120828_092521 -status
+120828_172737: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -c crab_0_120828_092521 -getoutput 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101
+120828_172813: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -c crab_0_120828_092546 -status
+120828_172821: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -c crab_0_120828_092546 -getoutput 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101
+120828_172857: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -c crab_0_120828_092611 -status
+120828_172904: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -c crab_0_120828_092611 -getoutput 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101
+120828_172934: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -c crab_0_120828_151954 -status
+120828_172940: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -c crab_0_120828_151954 -getoutput 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101
+120828_172951: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -c crab_0_120828_152050 -status
+120828_172955: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -c crab_0_120828_152050 -getoutput 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101
+120828_173003: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -c crab_0_120828_152126 -status
+120828_173007: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -c crab_0_120828_152126 -getoutput 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101
+120828_173018: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -c crab_0_120828_152206 -status
+120828_173023: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -c crab_0_120828_152206 -getoutput 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101
+120828_173045: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -c crab_0_120828_154455 -status
+120828_173105: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -c crab_0_120828_154455 -getoutput 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101
+120828_173632: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -c crab_0_120828_092452 -status
+120828_173639: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -c crab_0_120828_092521 -status
+120828_173643: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -c crab_0_120828_092546 -status
+120828_173646: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -c crab_0_120828_092611 -status
+120828_173651: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -c crab_0_120828_151954 -status
+120828_173655: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -c crab_0_120828_152050 -status
+120828_173659: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -c crab_0_120828_152126 -status
+120828_173703: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -c crab_0_120828_152206 -status
+120828_173707: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -c crab_0_120828_154455 -status
+120828_174221: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -c crab_0_120828_092452 -status
+120828_174225: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -c crab_0_120828_092521 -status
+120828_174228: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -c crab_0_120828_092546 -status
+120828_174231: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -c crab_0_120828_092611 -status
+120828_174234: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -c crab_0_120828_151954 -status
+120828_174237: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -c crab_0_120828_152050 -status
+120828_174240: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -c crab_0_120828_152126 -status
+120828_174243: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -c crab_0_120828_152206 -status
+120828_174246: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -c crab_0_120828_154455 -status
+120828_174754: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -c crab_0_120828_092452 -status
+120828_174757: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -c crab_0_120828_092521 -status
+120828_174800: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -c crab_0_120828_092546 -status
+120828_174804: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -c crab_0_120828_092611 -status
+120828_174807: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -c crab_0_120828_151954 -status
+120828_174810: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -c crab_0_120828_152050 -status
+120828_174813: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -c crab_0_120828_152126 -status
+120828_174816: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -c crab_0_120828_152206 -status
+120828_174819: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -c crab_0_120828_154455 -status
+120828_175327: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -c crab_0_120828_092452 -status
+120828_175330: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -c crab_0_120828_092521 -status
+120828_175333: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -c crab_0_120828_092546 -status
+120828_175336: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -c crab_0_120828_092611 -status
+120828_175339: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -c crab_0_120828_151954 -status
+120828_175342: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -c crab_0_120828_152050 -status
+120828_175345: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -c crab_0_120828_152126 -status
+120828_175348: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -c crab_0_120828_152206 -status
+120828_175351: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -c crab_0_120828_154455 -status
+120828_202459: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -c crab_0_120828_092452 -status
+120828_213311: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -status -c crab_0_120828_154455
+120828_213502: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -create -submit -cfg crab_GlbAlexey_corr_APEsON_nophi_test.cfg
+120828_213616: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -status -c crab_0_120828_152206
+120828_213854: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -create -submit -cfg crab_GlbAlexey_corr_APEsOFF_nophi.cfg
+120828_213919: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -create -submit -cfg crab_GlbAlexey_corr_APEsON_nophi.cfg
+120828_213943: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -create -submit -cfg crab_muonGlbAlexey_corr_APEsOFF_nophi.cfg
+120828_214008: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -create -submit -cfg crab_muonGlbAlexey_corr_APEsON_nophi.cfg
+120828_214234: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -create -submit -cfg crab_GlbAlexey_corr_APEsON_nophi_test.cfg
+120828_221752: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -create -submit -cfg crab_GlbAlexey_corr_APEsOFF_nophi.cfg
+120828_221821: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -create -submit -cfg crab_GlbAlexey_corr_APEsON_nophi.cfg
+120828_221846: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -create -submit -cfg crab_muonGlbAlexey_corr_APEsOFF_nophi.cfg
+120828_221913: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -create -submit -cfg crab_muonGlbAlexey_corr_APEsON_nophi.cfg
+120828_221942: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -create -submit -cfg crab_GlbIDEAL_APEsOFF_nophi.cfg
+120828_222008: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -create -submit -cfg crab_GlbIDEAL_APEsON_nophi.cfg
+120828_222035: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -create -submit -cfg crab_muonGlbIDEAL_APEsOFF_nophi.cfg
+120828_222102: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -create -submit -cfg crab_muonGlbIDEAL_APEsON_nophi.cfg
+120828_222146: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -status -c crab_0_120828_214234
+120828_222205: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -get all -c crab_0_120828_214234
+120828_230631: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -create -submit -cfg crab_Glb_IDEALMS_APEsOFF_nophi.cfg
+120828_230658: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -create -submit -cfg crab_Glb_IDEALMS_APEsON_nophi.cfg
+120828_230723: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -create -submit -cfg crab_muonGlb_IDEALMS_APEsOFF_nophi.cfg
+120828_230750: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -create -submit -cfg crab_muonGlb_IDEALMS_APEsON_nophi.cfg
+120829_104037: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -c crab_0_120828_221752 -status
+120829_104046: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -c crab_0_120828_221752 -getoutput 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101
+120829_104107: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -c crab_0_120828_221821 -status
+120829_104110: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -c crab_0_120828_221821 -getoutput 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101
+120829_104133: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -c crab_0_120828_221846 -status
+120829_104136: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -c crab_0_120828_221846 -getoutput 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101
+120829_104200: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -c crab_0_120828_221913 -status
+120829_104204: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -c crab_0_120828_221913 -getoutput 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101
+120829_104231: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -c crab_0_120828_221942 -status
+120829_104235: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -c crab_0_120828_221942 -getoutput 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101
+120829_104257: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -c crab_0_120828_222008 -status
+120829_104301: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -c crab_0_120828_222008 -getoutput 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101
+120829_104324: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -c crab_0_120828_222035 -status
+120829_104328: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -c crab_0_120828_222035 -getoutput 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101
+120829_104351: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -c crab_0_120828_222102 -status
+120829_104355: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -c crab_0_120828_222102 -getoutput 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101
+120829_104418: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -c crab_0_120828_230631 -status
+120829_104422: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -c crab_0_120828_230631 -getoutput 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101
+120829_104447: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -c crab_0_120828_230658 -status
+120829_104450: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -c crab_0_120828_230658 -getoutput 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101
+120829_104516: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -c crab_0_120828_230723 -status
+120829_104519: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -c crab_0_120828_230723 -getoutput 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101
+120829_104542: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -c crab_0_120828_230750 -status
+120829_104545: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -c crab_0_120828_230750 -getoutput 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101
+120829_104816: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -c crab_0_120828_221752 -status
+120830_103308: /uscmst1/prod/grid/CRAB_2_8_2_patch1/python/crab.py -status -c crab_0_120828_230750
