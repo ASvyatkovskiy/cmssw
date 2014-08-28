@@ -8,19 +8,6 @@
 //
 #include "FWCore/Utilities/interface/Exception.h"
 
-  /**
-   * Templated class representing a symmetric 3*3 matrix describing,  according
-   * to the ErrorWeightType tag, a (cartesian) covariance matrix or the weight
-   * matrix (the inverse of the covariance matrix).
-   * \li To have a covariance matrix, the ErrorMatrixTag has to be used, and a 
-   * typedef is available as LocalError
-   * \li To have a weight matrix, the WeightMatrixTag has to be used, and a 
-   * typedef is available as Localweight
-   * 
-   * The typedefs should be used in the code.
-   */
-
-
 template <class T, class ErrorWeightType> 
 class LocalErrorBaseExtended
 {
@@ -29,14 +16,8 @@ public:
   /// Tag to request a null error matrix
   class NullMatrix{};
 
-  /**
-   * Default constructor, creating a null 3*3 matrix (all values are 0)
-   */
   LocalErrorBaseExtended() {}
 
-  /** 
-   * Obsolete  Constructor that allocates a null LocalErrorBaseExtended (it does not create the error matrix at all)
-   */
   LocalErrorBaseExtended(const NullMatrix &) {}
 
   LocalErrorBaseExtended(InvalidError) {
@@ -75,9 +56,6 @@ public:
 
   }
   
-   /**
-   * Constructor from SymMatrix. The original matrix has to be a 3*3 matrix.
-   */
     LocalErrorBaseExtended(const AlgebraicSymMatrix44 & err) : 
       theCartesianError(err) { }
   
