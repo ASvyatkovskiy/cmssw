@@ -83,8 +83,7 @@ void GeometryAligner::applyAlignments( C* geometry,
   const AlignTransform::Rotation inverseGlobalRotation = globalRotation.inverse();
 
   //FIXME test setup to read APEs from ASCIII file, if need be
-  std::ifstream apeReadFile("/afs/cern.ch/user/a/asvyatko/APEPRETESTS/CMSSW_7_1_0_pre9/src/SegsInFits/SegsInFits/APEList66.txt");
-  std::set<int> apeList; //To avoid duplicates - essentially the list of rawIds
+  std::ifstream apeReadFile("/afs/cern.ch/user/a/asvyatko/public/APEList66.txt");
 
   //FIXME read in the APEs from ASCII file
   std::map<int,GlobalErrorExtended> apeDict;
@@ -171,7 +170,6 @@ void GeometryAligner::applyAlignments( C* geometry,
           angles[2] = am[0][1];
 
 	  // Alignment Position Error only if non-zero to save memory
-	  //GlobalErrorExtended error(0.,0.,0.,0.,0.,0.,0.,0.,0.,0.,0.,0.,0.,0.,0.,0.,0.,0.,0.,0.,0.);
           //GlobalError errorDB( asSMatrix<3>((*iAlignError).matrix()) );
           int reference = (iGeomDet->geographicalId()).rawId();
           //if (apeDict.find(reference) == apeDict.end()) std::cout << "APE not found?" << std::endl;
@@ -186,8 +184,6 @@ void GeometryAligner::applyAlignments( C* geometry,
 	    ++nAPE;
 	  
 	}
-        //FIXME close file at the end
-        //apeReadFile.close();
 
         edm::LogInfo("Alignment") << "@SUB=GeometryAligner::applyAlignments" 
         			    << "Finished to apply " << theMap.size() << " alignments with "
