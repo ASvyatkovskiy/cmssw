@@ -29,6 +29,8 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include "TRandom.h"
+
 
 class Alignments;
 class AlignmentSurfaceDeformations;
@@ -81,8 +83,20 @@ void GeometryAligner::applyAlignments( C* geometry,
   const AlignTransform::Rotation inverseGlobalRotation = globalRotation.inverse();
 
   //FIXME test setup to read APEs from ASCIII file, if need be
-  //std::ifstream apeReadFile("/afs/cern.ch/user/a/asvyatko/APEStudy2014/CMSSW_7_1_0_pre9/src/SegsInFits/SegsInFits/filename.dat");
-  //std::set<int> apeList; //To avoid duplicates - essentially the list of rawIds
+  std::ifstream apeReadFile("/afs/cern.ch/user/a/asvyatko/APEPRETESTS/CMSSW_7_1_0_pre9/src/SegsInFits/SegsInFits/APEList66.txt");
+  std::set<int> apeList; //To avoid duplicates - essentially the list of rawIds
+
+  //FIXME read in the APEs from ASCII file
+  std::map<int,GlobalErrorExtended> apeDict;
+  while (!apeReadFile.eof()) {
+    int apeId=0; double xx,xy,xz,xphix,xphiy,xphiz,yy,yz,yphix,yphiy,yphiz,zz,zphix,zphiy,zphiz,phixphix,phixphiy,phixphiz,phiyphiy,phiyphiz,phizphiz;
+    apeReadFile>>apeId>>xx>>xy>>xz>>xphix>>xphiy>>xphiz>>yy>>yz>>yphix>>yphiy>>yphiz>>zz>>zphix>>zphiy>>zphiz>>phixphix>>phixphiy>>phixphiz>>phiyphiy>>phiyphiz>>phizphiz>>std::ws;
+    GlobalErrorExtended error_tmp(xx,xy,xz,xphix,xphiy,xphiz,yy,yz,yphix,yphiy,yphiz,zz,zphix,zphiy,zphiz,phixphix,phixphiy,phixphiz,phiyphiy,phiyphiz,phizphiz);
+    apeDict[apeId] = error_tmp;
+  }
+  //FIXME close file at the end
+  apeReadFile.close();
+
 
   // Parallel loop on alignments, alignment errors and geomdets
   std::vector<AlignTransform>::const_iterator iAlign = alignments->m_align.begin();
@@ -156,26 +170,14 @@ void GeometryAligner::applyAlignments( C* geometry,
           angles[1] = am[0][2];
           angles[2] = am[0][1];
 
-          std::cout << "Shifts " << shifts << std::endl; 
-          std::cout << "Angles " << angles << std::endl;
-
 	  // Alignment Position Error only if non-zero to save memory
-	  //FIXME fake APE test setup  
-	  //GlobalErrorExtended error(0.0002527565,-0.0012465105,0.0009901624,0.00001,0.00001,0.00001,0.0140495329,-0.0105105416,0.00001,0.00001,0.00001,0.0103698756,  
-          //                         0.00001,0.00001,0.00001,0.00001,0.00001,0.00001,0.00001,0.00001,0.00001);
-          GlobalErrorExtended error(10.,10.,10.,0.,0.,0.,10.,10.,0.,0.,0.,10.,0.,0.,0.,0.,0.,0.,0.,0.,0.);
 	  //GlobalErrorExtended error(0.,0.,0.,0.,0.,0.,0.,0.,0.,0.,0.,0.,0.,0.,0.,0.,0.,0.,0.,0.,0.);
-	  //GlobalError error1( asSMatrix<3>((*iAlignError).matrix()) );
-
-          //FIXME test setup to read from ASCII
-          //if (!apeReadFile.eof()) {
-          //  int apeId=0; double x11,x21,x22,x31,x32,x33;
-          //  apeReadFile>>apeId>>x11>>x21>>x22>>x31>>x32>>x33>>std::ws;
-          //  GlobalError error2(x11,x21,x22,x31,x32,x33);
-          //  error = error+error2;
-          //} else {
-          //  error = error+error1; 
-          //} 
+          //GlobalError errorDB( asSMatrix<3>((*iAlignError).matrix()) );
+          int reference = (iGeomDet->geographicalId()).rawId();
+          //if (apeDict.find(reference) == apeDict.end()) std::cout << "APE not found?" << std::endl;
+          GlobalErrorExtended error = apeDict[reference];
+          //DetId tmp(reference);
+          //if (tmp.subdetId() == MuonSubdetId::DT) {
 
           LocalErrorExtended newError = ErrorFrameTransformer().transform46(error,shifts,angles);
 
