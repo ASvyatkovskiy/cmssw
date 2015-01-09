@@ -1,5 +1,13 @@
 #include "Validation/MuonIdentification/interface/MuonIdVal.h"
 
+#include <iostream>
+#include <fstream>
+#include <string>
+
+
+using namespace edm;
+using namespace std;
+
 MuonIdVal::MuonIdVal(const edm::ParameterSet& ps)
 {
   iConfig=ps;
@@ -31,6 +39,77 @@ MuonIdVal::MuonIdVal(const edm::ParameterSet& ps)
    inputMuonShowerInformationValueMapToken_ = consumes<edm::ValueMap<reco::MuonShower> >(inputMuonShowerInformationValueMap_);
 
    subsystemname_ = iConfig.getUntrackedParameter<std::string>("subSystemFolder", "YourSubsystem") ;
+}
+
+void MuonIdVal::setAPEs(const edm::EventSetup& eSetup) {
+
+  // Ape are always filled even they're null
+  ESHandle<AlignmentErrorsExtended> dtAlignmentErrors;
+  eSetup.get<DTAlignmentErrorExtendedRcd>().get( dtAlignmentErrors );
+  for ( std::vector<AlignTransformErrorExtended>::const_iterator it = dtAlignmentErrors->m_alignError.begin();
+    it != dtAlignmentErrors->m_alignError.end(); it++ ) {
+    CLHEP::HepSymMatrix error = (*it).matrix();
+
+    double xx = error[0][0];
+    double xy =error[0][1];
+    double xz =error[0][2];
+    double xphix =error[0][3];
+    double xphiy =error[0][4];
+    double xphiz =error[0][5];
+    double yy =error[1][1];
+    double yz =error[1][2];
+    double yphix =error[1][3];
+    double yphiy =error[1][4] ;
+    double yphiz =error[1][5];
+    double zz =error[2][2] ;
+    double zphix =error[2][3];
+    double zphiy =error[2][4];
+    double zphiz =error[2][5];
+    double phixphix =error[3][3];
+    double phixphiy =error[3][4];
+    double phixphiz =error[3][5];
+    double phiyphiz =error[4][5];
+    double phiyphiy =error[4][4];
+    double phizphiz =error[5][5];
+
+    GlobalErrorExtended glbErr(xx,xy,xz,xphix,xphiy,xphiz,yy,yz,yphix,yphiy,yphiz,zz,zphix,zphiy,zphiz,phixphix,phixphiy,phixphiz,phiyphiy,phiyphiz,phizphiz);
+
+    DTChamberId DTid((*it).rawId());
+    dtApeMap.insert( pair<DTChamberId, GlobalErrorExtended> (DTid, glbErr) );
+  }
+  ESHandle<AlignmentErrorsExtended> cscAlignmentErrors;
+  eSetup.get<CSCAlignmentErrorExtendedRcd>().get( cscAlignmentErrors );
+  for ( std::vector<AlignTransformErrorExtended>::const_iterator it = cscAlignmentErrors->m_alignError.begin();
+    it != cscAlignmentErrors->m_alignError.end(); it++ ) {
+    CLHEP::HepSymMatrix error = (*it).matrix();
+
+    double xx = error[0][0];
+    double xy =error[0][1];
+    double xz =error[0][2];
+    double xphix =error[0][3];
+    double xphiy =error[0][4];
+    double xphiz =error[0][5];
+    double yy =error[1][1];
+    double yz =error[1][2];
+    double yphix =error[1][3];
+    double yphiy =error[1][4];
+    double yphiz =error[1][5];
+    double zz =error[2][2];
+    double zphix =error[2][3];
+    double zphiy =error[2][4];
+    double zphiz =error[2][5];
+    double phixphix =error[3][3];
+    double phixphiy =error[3][4];
+    double phixphiz =error[3][5];
+    double phiyphiz =error[4][5];
+    double phiyphiy =error[4][4];
+    double phizphiz =error[5][5];
+
+    GlobalErrorExtended glbErr(xx,xy,xz,xphix,xphiy,xphiz,yy,yz,yphix,yphiy,yphiz,zz,zphix,zphiy,zphiz,phixphix,phixphiy,phixphiz,phiyphiy,phiyphiz,phizphiz);
+
+    CSCDetId CSCid((*it).rawId());
+    cscApeMap.insert( pair<CSCDetId, GlobalErrorExtended> (CSCid, glbErr) );
+   }
 }
 
 MuonIdVal::~MuonIdVal() {}
@@ -139,6 +218,26 @@ void MuonIdVal::bookHistograms(DQMStore::IBooker & ibooker, const edm::Run&, con
              hMuonUncorrelatedHits[i][station] = ibooker.book1D(name, title,400,0,400);
          }
 
+
+         //FIXME SAV
+         sprintf(name, "hDTPullxFullErr_%i", station+1);
+         sprintf(title, "DT Full Pull X: Station %i", station+1);
+         hDTPullxFullErr[i][station] = ibooker.book1D(name, title, 100, -20., 20.);
+
+         sprintf(name, "hDTPulldXdZFullErr_%i", station+1);
+         sprintf(title, "DT Full Pull dXdZ: Station %i", station+1);
+         hDTPulldXdZFullErr[i][station] = ibooker.book1D(name, title, 100, -20., 20.);
+
+         if (station < 3) {
+           sprintf(name, "hDTPullyFullErr_%i", station+1);
+           sprintf(title, "DT Full Pull Y: Station %i", station+1);
+           hDTPullyFullErr[i][station] = ibooker.book1D(name, title, 100, -20., 20.);
+
+           sprintf(name, "hDTPulldYdZFullErr_%i", station+1);
+           sprintf(title, "DT Full Pull dYdZ: Station %i", station+1);
+           hDTPulldYdZFullErr[i][station] = ibooker.book1D(name, title, 100, -20., 20.);
+         }
+
          sprintf(name, "hDT%iPullxPropErr", station+1);
          sprintf(title, "DT Station %i Pull X w/ Propagation Error Only", station+1);
          hDTPullxPropErr[i][station] = ibooker.book1D(name, title, 100, -20., 20.);
@@ -172,6 +271,22 @@ void MuonIdVal::bookHistograms(DQMStore::IBooker & ibooker, const edm::Run&, con
          sprintf(name, "hDT%iPullDistWithNoSegment", station+1);
          sprintf(title, "DT Station %i Pull Dist When There Is No Segment", station+1);
          hDTPullDistWithNoSegment[i][station] = ibooker.book1D(name, title, 100, -140., 30.);
+
+         sprintf(name, "hCSCPullxFullErr_%i", station+1);
+         sprintf(title, "CSC Full Pull X: Station %i", station+1);
+         hCSCPullxFullErr[i][station] = ibooker.book1D(name, title, 100, -20., 20.);
+
+         sprintf(name, "hCSCPulldXdZFullErr_%i", station+1);
+         sprintf(title, "CSC Full Pull dXdZ: Station %i", station+1);
+         hCSCPulldXdZFullErr[i][station] = ibooker.book1D(name, title, 100, -20., 20.);
+
+         sprintf(name, "hCSCPullyFullErr_%i", station+1);
+         sprintf(title, "CSC Full Pull Y: Station %i", station+1);
+         hCSCPullyFullErr[i][station] = ibooker.book1D(name, title, 100, -20., 20.);
+         
+         sprintf(name, "hCSCPulldYdZFullErr_%i", station+1);
+         sprintf(title, "CSC Full Pull dYdZ: Station %i", station+1);
+         hCSCPulldYdZFullErr[i][station] = ibooker.book1D(name, title, 100, -20., 20.);
 
          sprintf(name, "hCSC%iPullxPropErr", station+1);
          sprintf(title, "CSC Station %i Pull X w/ Propagation Error Only", station+1);
@@ -219,9 +334,7 @@ void MuonIdVal::bookHistograms(DQMStore::IBooker & ibooker, const edm::Run&, con
       hSegmentIsBestDrNotAssociatedXY = ibooker.book2D("hSegmentIsBestDrNotAssociatedXY", "X-Y of Best in Station by #DeltaR Not Associated Segments", 1700, -850., 850., 1700, -850., 850.);
    }
 
-   if (useTrackerMuons_ && makeAllChamberPlots_) {
       ibooker.setCurrentFolder(baseFolder_+"/TrackerMuons");
-
       // by chamber
       for(int station = 0; station < 4; ++station) {
          // DT wheels: -2 -> 2
@@ -229,6 +342,8 @@ void MuonIdVal::bookHistograms(DQMStore::IBooker & ibooker, const edm::Run&, con
             // DT sectors: 1 -> 14
             for(int sector = 0; sector < 14; ++sector)
             {
+
+            if (makeAllChamberPlots_ && useTrackerMuons_) {
                sprintf(name, "hDTChamberDx_%i_%i_%i", station+1, wheel-2, sector+1);
                sprintf(title, "DT Chamber Delta X: Station %i Wheel %i Sector %i", station+1, wheel-2, sector+1);
                hDTChamberDx[station][wheel][sector] = ibooker.book1D(name, title, 100, -100., 100.);
@@ -254,6 +369,7 @@ void MuonIdVal::bookHistograms(DQMStore::IBooker & ibooker, const edm::Run&, con
                sprintf(name, "hDTChamberEdgeYWithNoSegment_%i_%i_%i", station+1, wheel-2, sector+1);
                sprintf(title, "DT Chamber Edge Y When There Is No Segment: Station %i Wheel %i Sector %i", station+1, wheel-2, sector+1);
                hDTChamberEdgeYWithNoSegment[station][wheel][sector] = ibooker.book1D(name, title, 100, -140., 30.);
+              }//tracker only
             }// sector
          }// wheel
 
@@ -264,6 +380,8 @@ void MuonIdVal::bookHistograms(DQMStore::IBooker & ibooker, const edm::Run&, con
                // CSC chambers: 1 -> 36
                for(int chamber = 0; chamber < 36; ++chamber)
                {
+
+                 if (makeAllChamberPlots_ && useTrackerMuons_) {
                   sprintf(name, "hCSCChamberDx_%i_%i_%i_%i", endcap+1, station+1, ring+1, chamber+1);
                   sprintf(title, "CSC Chamber Delta X: Endcap %i Station %i Ring %i Chamber %i", endcap+1, station+1, ring+1, chamber+1);
                   hCSCChamberDx[endcap][station][ring][chamber] = ibooker.book1D(name, title, 100, -50., 50.);
@@ -287,16 +405,19 @@ void MuonIdVal::bookHistograms(DQMStore::IBooker & ibooker, const edm::Run&, con
                   sprintf(name, "hCSCChamberEdgeYWithNoSegment_%i_%i_%i_%i", endcap+1, station+1, ring+1, chamber+1);
                   sprintf(title, "CSC Chamber Edge Y When There Is No Segment: Endcap %i Station %i Ring %i Chamber %i", endcap+1, station+1, ring+1, chamber+1);
                   hCSCChamberEdgeYWithNoSegment[endcap][station][ring][chamber] = ibooker.book1D(name, title, 100, -70., 20.);
+                 }//tracker only
                }// chamber
             }// ring
          }// endcap
       }// station
-   }
 }
 
 void
 MuonIdVal::analyze(const edm::Event& iEvent, const edm::EventSetup& iSetup)
 {
+
+   setAPEs(iSetup);
+
    using namespace edm;
    using namespace reco;
 
@@ -460,10 +581,9 @@ MuonIdVal::analyze(const edm::Event& iEvent, const edm::EventSetup& iSetup)
                Fill(hCSCPullDistWithNoSegment[i][station], distance/error);
             }
          }// station
-      }
 
-      if (! useTrackerMuons_ || ! muon->isTrackerMuon()) continue;
-      if (makeAllChamberPlots_) {
+      //if (! useTrackerMuons_ || ! muon->isTrackerMuon()) continue;
+      //if (makeAllChamberPlots_) {
          // by chamber
          for(std::vector<MuonChamberMatch>::const_iterator chamberMatch = muon->matches().begin();
                chamberMatch != muon->matches().end(); ++chamberMatch)
@@ -472,22 +592,38 @@ MuonIdVal::analyze(const edm::Event& iEvent, const edm::EventSetup& iSetup)
 
             if (chamberMatch->detector() == MuonSubdetId::DT) {
                DTChamberId dtId(chamberMatch->id.rawId());
-               int wheel  = dtId.wheel();
-               int sector = dtId.sector();
+               //int wheel  = dtId.wheel();
+               //int sector = dtId.sector();
 
                if (chamberMatch->segmentMatches.empty()) {
-                  Fill(hDTChamberEdgeXWithNoSegment[station-1][wheel+2][sector-1], chamberMatch->edgeX);
-                  Fill(hDTChamberEdgeYWithNoSegment[station-1][wheel+2][sector-1], chamberMatch->edgeY);
+                  //Fill(hDTChamberEdgeXWithNoSegment[station-1][wheel+2][sector-1], chamberMatch->edgeX);
+                  //Fill(hDTChamberEdgeYWithNoSegment[station-1][wheel+2][sector-1], chamberMatch->edgeY);
                } else {
-                  Fill(hDTChamberEdgeXWithSegment[station-1][wheel+2][sector-1], chamberMatch->edgeX);
-                  Fill(hDTChamberEdgeYWithSegment[station-1][wheel+2][sector-1], chamberMatch->edgeY);
+                  //Fill(hDTChamberEdgeXWithSegment[station-1][wheel+2][sector-1], chamberMatch->edgeX);
+                  //Fill(hDTChamberEdgeYWithSegment[station-1][wheel+2][sector-1], chamberMatch->edgeY);
 
                   for(std::vector<MuonSegmentMatch>::const_iterator segmentMatch = chamberMatch->segmentMatches.begin();
                         segmentMatch != chamberMatch->segmentMatches.end(); ++segmentMatch)
                   {
                      if (segmentMatch->isMask(MuonSegmentMatch::BestInChamberByDR)) {
-                        Fill(hDTChamberDx[station-1][wheel+2][sector-1], chamberMatch->x-segmentMatch->x);
-                        if (station < 4) Fill(hDTChamberDy[station-1][wheel+2][sector-1], chamberMatch->y-segmentMatch->y);
+                        //Fill(hDTChamberDx[station-1][wheel+2][sector-1], chamberMatch->x-segmentMatch->x);
+                        //if (station < 4) Fill(hDTChamberDy[station-1][wheel+2][sector-1], chamberMatch->y-segmentMatch->y);
+                        AlgebraicVector shifts(2,0);
+                        AlgebraicVector angles(2,0);
+                        shifts[0] = segmentMatch->x;
+                        shifts[1] = segmentMatch->y;
+                        angles[0] = segmentMatch->dXdZ;
+                        angles[1] = segmentMatch->dYdZ;
+                        LocalErrorExtended lape = ErrorFrameTransformer().transform46(dtApeMap.find(dtId)->second,shifts,angles);
+                        //std::cout << dtApeMap.find(dtId)->second.matrix() << std::endl;
+                        //std::cout << lape.matrix() << std::endl;
+
+                        Fill(hDTPullxFullErr[i][station-1], (chamberMatch->x-segmentMatch->x)/sqrt(pow(chamberMatch->xErr,2)+pow(segmentMatch->xErr,2)+lape.cxx()));
+                        Fill(hDTPulldXdZFullErr[i][station-1],(chamberMatch->dXdZ-segmentMatch->dXdZ)/sqrt(pow(chamberMatch->dXdZErr,2)+pow(segmentMatch->dXdZErr,2)+lape.cphiyphiy())); 
+                        if (station < 3) {
+                          Fill(hDTPullyFullErr[i][station-1], (chamberMatch->y-segmentMatch->y)/sqrt(pow(chamberMatch->yErr,2)+pow(segmentMatch->yErr,2)+lape.cyy()));
+                          Fill(hDTPulldYdZFullErr[i][station-1], (chamberMatch->dYdZ-segmentMatch->dYdZ)/sqrt(pow(chamberMatch->dYdZErr,2)+pow(segmentMatch->dYdZErr,2)+lape.cphixphix()));
+                        }
                         break;
                      }
                   }// segmentMatch
@@ -498,23 +634,37 @@ MuonIdVal::analyze(const edm::Event& iEvent, const edm::EventSetup& iSetup)
 
             if (chamberMatch->detector() == MuonSubdetId::CSC)  {
                CSCDetId cscId(chamberMatch->id.rawId());
-               int endcap  = cscId.endcap();
-               int ring    = cscId.ring();
-               int chamber = cscId.chamber();
+               //int endcap  = cscId.endcap();
+               //int ring    = cscId.ring();
+               //int chamber = cscId.chamber();
 
                if (chamberMatch->segmentMatches.empty()) {
-                  Fill(hCSCChamberEdgeXWithNoSegment[endcap-1][station-1][ring-1][chamber-1], chamberMatch->edgeX);
-                  Fill(hCSCChamberEdgeYWithNoSegment[endcap-1][station-1][ring-1][chamber-1], chamberMatch->edgeY);
+                  //Fill(hCSCChamberEdgeXWithNoSegment[endcap-1][station-1][ring-1][chamber-1], chamberMatch->edgeX);
+                  //Fill(hCSCChamberEdgeYWithNoSegment[endcap-1][station-1][ring-1][chamber-1], chamberMatch->edgeY);
                } else {
-                  Fill(hCSCChamberEdgeXWithSegment[endcap-1][station-1][ring-1][chamber-1], chamberMatch->edgeX);
-                  Fill(hCSCChamberEdgeYWithSegment[endcap-1][station-1][ring-1][chamber-1], chamberMatch->edgeY);
+                  //Fill(hCSCChamberEdgeXWithSegment[endcap-1][station-1][ring-1][chamber-1], chamberMatch->edgeX);
+                  //Fill(hCSCChamberEdgeYWithSegment[endcap-1][station-1][ring-1][chamber-1], chamberMatch->edgeY);
 
                   for(std::vector<MuonSegmentMatch>::const_iterator segmentMatch = chamberMatch->segmentMatches.begin();
                         segmentMatch != chamberMatch->segmentMatches.end(); ++segmentMatch)
                   {
                      if (segmentMatch->isMask(MuonSegmentMatch::BestInChamberByDR)) {
-                        Fill(hCSCChamberDx[endcap-1][station-1][ring-1][chamber-1], chamberMatch->x-segmentMatch->x);
-                        Fill(hCSCChamberDy[endcap-1][station-1][ring-1][chamber-1], chamberMatch->y-segmentMatch->y);
+                        //Fill(hCSCChamberDx[endcap-1][station-1][ring-1][chamber-1], chamberMatch->x-segmentMatch->x);
+                        //Fill(hCSCChamberDy[endcap-1][station-1][ring-1][chamber-1], chamberMatch->y-segmentMatch->y);
+                        AlgebraicVector shifts(2,0);
+                        AlgebraicVector angles(2,0);
+                        shifts[0] = segmentMatch->x;
+                        shifts[1] = segmentMatch->y;
+                        angles[0] = segmentMatch->dXdZ;
+                        angles[1] = segmentMatch->dYdZ;
+                        LocalErrorExtended lape = ErrorFrameTransformer().transform46(cscApeMap.find(cscId)->second,shifts,angles);
+                        //std::cout << dtApeMap.find(dtId)->second.matrix() << std::endl;
+                        //std::cout << lape.matrix() << std::endl;
+
+                        Fill(hCSCPullxFullErr[i][station-1], (chamberMatch->x-segmentMatch->x)/sqrt(pow(chamberMatch->xErr,2)+pow(segmentMatch->xErr,2)+lape.cxx()));
+                        Fill(hCSCPulldXdZFullErr[i][station-1],(chamberMatch->dXdZ-segmentMatch->dXdZ)/sqrt(pow(chamberMatch->dXdZErr,2)+pow(segmentMatch->dXdZErr,2)+lape.cphiyphiy()));
+                        Fill(hCSCPullyFullErr[i][station-1], (chamberMatch->y-segmentMatch->y)/sqrt(pow(chamberMatch->yErr,2)+pow(segmentMatch->yErr,2)+lape.cyy()));
+                        Fill(hCSCPulldYdZFullErr[i][station-1], (chamberMatch->dYdZ-segmentMatch->dYdZ)/sqrt(pow(chamberMatch->dYdZErr,2)+pow(segmentMatch->dYdZErr,2)+lape.cphixphix()));
                         break;
                      }
                   }// segmentMatch
