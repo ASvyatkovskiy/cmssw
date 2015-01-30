@@ -53,11 +53,32 @@
 #include "DQMServices/Core/interface/MonitorElement.h"
 #include "DQMServices/Core/interface/DQMEDAnalyzer.h"
 
+//Alignment
+#include "DataFormats/MuonDetId/interface/DTChamberId.h"
+#include "DataFormats/MuonDetId/interface/CSCDetId.h"
+#include "DataFormats/GeometryCommonDetAlgo/interface/GlobalError.h"
+#include "DataFormats/TrackingRecHit/interface/AlignmentPositionError.h"
+#include "DataFormats/GeometryCommonDetAlgo/interface/ErrorFrameTransformer.h"
+#include "CondFormats/Alignment/interface/Alignments.h"
+#include "CondFormats/Alignment/interface/AlignTransform.h"
+#include "CondFormats/AlignmentRecord/interface/DTAlignmentRcd.h"
+#include "CondFormats/AlignmentRecord/interface/CSCAlignmentRcd.h"
+#include "CondFormats/Alignment/interface/AlignmentErrors.h"
+#include "CondFormats/Alignment/interface/AlignmentErrorsExtended.h"
+#include "CondFormats/Alignment/interface/AlignTransformError.h"
+#include "CondFormats/Alignment/interface/AlignTransformErrorExtended.h"
+#include "CondFormats/AlignmentRecord/interface/DTAlignmentErrorExtendedRcd.h"
+#include "CondFormats/AlignmentRecord/interface/CSCAlignmentErrorExtendedRcd.h"
+#include "FWCore/Framework/interface/EventSetup.h"
+
 //class MuonIdVal : public edm::EDAnalyzer {
-class MuonIdVal : public DQMEDAnalyzer {
+class MuonIdVal : public thread_unsafe::DQMEDAnalyzer {
    public:
       explicit MuonIdVal(const edm::ParameterSet&);
       ~MuonIdVal();
+
+      /*Set APE map*/
+      void setAPEs(const edm::EventSetup&);
 
    private:
       virtual void beginJob();
@@ -184,6 +205,11 @@ class MuonIdVal : public DQMEDAnalyzer {
       MonitorElement* hDTPulldXdZPropErr[4][4];
       MonitorElement* hDTPullyPropErr[4][3];
       MonitorElement* hDTPulldYdZPropErr[4][3];
+      MonitorElement* hDTPullxFullErr[4][4];
+      MonitorElement* hDTPullyFullErr[4][3];
+      MonitorElement* hDTPulldXdZFullErr[4][4];
+      MonitorElement* hDTPulldYdZFullErr[4][3];
+
       MonitorElement* hDTDistWithSegment[4][4];
       MonitorElement* hDTDistWithNoSegment[4][4];
       MonitorElement* hDTPullDistWithSegment[4][4];
@@ -192,6 +218,10 @@ class MuonIdVal : public DQMEDAnalyzer {
       MonitorElement* hCSCPulldXdZPropErr[4][4];
       MonitorElement* hCSCPullyPropErr[4][4];
       MonitorElement* hCSCPulldYdZPropErr[4][4];
+      MonitorElement* hCSCPullxFullErr[4][4];
+      MonitorElement* hCSCPullyFullErr[4][4];
+      MonitorElement* hCSCPulldXdZFullErr[4][4];
+      MonitorElement* hCSCPulldYdZFullErr[4][4];
       MonitorElement* hCSCDistWithSegment[4][4];
       MonitorElement* hCSCDistWithNoSegment[4][4];
       MonitorElement* hCSCPullDistWithSegment[4][4];
@@ -202,6 +232,7 @@ class MuonIdVal : public DQMEDAnalyzer {
       // CSC: [endcap][station][ring][chamber]
       MonitorElement* hDTChamberDx[4][5][14];
       MonitorElement* hDTChamberDy[3][5][14];
+
       MonitorElement* hDTChamberEdgeXWithSegment[4][5][14];
       MonitorElement* hDTChamberEdgeXWithNoSegment[4][5][14];
       MonitorElement* hDTChamberEdgeYWithSegment[4][5][14];
@@ -222,6 +253,11 @@ class MuonIdVal : public DQMEDAnalyzer {
       MonitorElement* hSegmentIsBestDrAssociatedXY;
       MonitorElement* hSegmentIsBestDrNotAssociatedRZ;
       MonitorElement* hSegmentIsBestDrNotAssociatedXY;
+
+      //Adding APEs
+      std::map<DTChamberId, GlobalErrorExtended> dtApeMap;
+      std::map<CSCDetId, GlobalErrorExtended> cscApeMap;
+
 };
 
 #endif
